@@ -21,7 +21,7 @@
 title: Gavin's Blog
 email: gavin.qu@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm passionate about data-driven solutions through the lens of the Social Sciences and the intersection of technology and art. 
+  I'm passionate about data-driven solutions through the lens of the social sciences and the intersection of technology and art. 
   Occasionally, I write blogs documenting my journey. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gjqu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
