@@ -3,16 +3,31 @@ layout: page
 title: About
 permalink: /about/
 ---
+```
+class MyBio:
+    def __init__(self):
+        self.name = "Gavin Qu"
+        self.role = "Data Creative"
+        self.location = " "
+        self.languages = ["Python", "JavaScript", "SQL", "R", ]
+        self.interests = ["Machine Learning", "A/B Testing", "Web Dev", "Open Source"]
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+    def current_project(self):
+        return "Working on a book recommendation system for a community-based book exchange"
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+    def contact(self):
+        return {
+            "LinkedIn": "linkedin.com/in/gavinqu/",
+            "Email": "gavin.qu@hotmail.com",
+        }
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+    def about_me(self):
+        return """
+        Passionate and creative data science student with diverse background in economics and social sciences. 
+        """
 
-
-[jekyll-organization]: https://github.com/jekyll
+bio = MyBio()
+print(bio.about_me())
+print("Current Project:", bio.current_project())
+print("Contact Info:", bio.contact())
+```
