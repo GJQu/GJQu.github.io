@@ -1,29 +1,24 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "My First Blog Post"
 date:   2024-04-03 17:26:36 +0100
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+In the learning pyramid (also known as the cone of learning), the base of the pyramid is made up of "Practiced by Doing (75%)" and "Teaching Others (90%)", the percentage represent the final retention of knowledge induced by the type of learning. 
 
-Jekyll requires blog post files to be named according to the following format:
+![Learning Pyramid Image](/assets/images/learning_pyramid.png)
 
-`YEAR-MONTH-DAY-title.MARKUP`
+Therefore, I will be updating my blog periodically to document my journey of learning Machine Learning (ML) from theory to application, and the mathematics behind it. My exposure to ML initially is through [David Zentler-Munro's](https://davidzentlermunro.github.io/) course "Data Science for Economics" at the University of Essex, where I am currently studying as a MS Economics student. 
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+I am currently working on my dissertation in labor economics where I will incorporate some of these ML techniques to augment econometric techniques. 
 
-Jekyll also offers powerful support for code snippets:
+## Books and Other Resources 
+- *An Introduction to Statistical Learning* (also known as ISLP for Python or ISLR for R)
+- *[Mathematics for Machine Learning](https://mml-book.github.io/book/mml-book.pdf)* 
+- *The Elements of Statistical Learning* 
+- *[Python for Data Anlysis](https://wesmckinney.com/book/)*
+- *[Deep Learning](https://www.deeplearningbook.org/)* by Ian Goodfellow et al
+- *Deep Learning for Coders with Fastai and PyTorch* 
+  - This comes as both a book and a comprehensive [online course](https://course.fast.ai/Resources/book.html)
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+## 
