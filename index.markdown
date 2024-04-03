@@ -4,7 +4,3 @@
 
 layout: home
 ---
-<<<<<<< HEAD
-This is my home page. 
-=======
->>>>>>> parent of 111d09f (Update index.markdown)
