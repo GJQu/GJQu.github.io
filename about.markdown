@@ -29,7 +29,7 @@ I am currently working on a book recommendation system designed for a community-
 
 If you'd like to learn more about my work or discuss potential collaborations, please reach out to me via:
 - **LinkedIn**: [linkedin.com/in/gavinqu/](https://linkedin.com/in/gavinqu/)
-- **Email**: [gavinqu1@gmail.com](mailto:gavinqu1@gmail.com)
+- **Email**: [gavin.qu@hotmail.com](mailto:gavin.qu@hotmail.com)
 
 ### More About Me
 
