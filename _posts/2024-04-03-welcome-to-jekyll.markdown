@@ -3,6 +3,8 @@ layout: post
 title:  "My First Blog Post"
 date:   2024-04-03 17:26:36 +0100
 categories: jekyll update
+header:
+  teaser: /assets/images/learning_pyramid.png
 ---
 <img src="/assets/images/learning_pyramid.png" alt="Learning Pyramid Image" width="500" height="300">
 
