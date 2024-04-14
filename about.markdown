@@ -1,33 +1,40 @@
 ---
-layout: page
-title: About
+title: "About Me"
 permalink: /about/
+layout: single
+author_profile: true
+header:
+  image: "/assets/images/about_me.jpg"  # Path to the header image
 ---
-```
-class MyBio:
-    def __init__(self):
-        self.name = "Gavin Qu"
-        self.role = "Data Creative"
-        self.location = " "
-        self.languages = ["Python", "JavaScript", "SQL", "R", ]
-        self.interests = ["Machine Learning", "A/B Testing", "Web Dev", "Open Source"]
 
-    def current_project(self):
-        return "Working on a book recommendation system for a community-based book exchange"
+I am Gavin Qu, a Data Creative based out of the San Francisco Bay Area. My academic and professional journeys have taken me through fascinating fields like economics and data science, focusing on how data-driven solutions can improve and innovate our approach to traditional problems.
 
-    def contact(self):
-        return {
-            "LinkedIn": "linkedin.com/in/gavinqu/",
-            "Email": "gavin.qu@hotmail.com",
-        }
+### What I Do
 
-    def about_me(self):
-        return """
-        Passionate and creative data science student with diverse background in economics and social sciences. 
-        """
+I specialize in several programming languages including:
+- Python
+- JavaScript
+- SQL
+- R
 
-bio = MyBio()
-print(bio.about_me())
-print("Current Project:", bio.current_project())
-print("Contact Info:", bio.contact())
-```
+My interests are broad and include:
+- Machine Learning
+- A/B Testing
+- Web Development
+- Open Source
+
+I am currently working on a book recommendation system designed for a community-based book exchange. This project aims to enhance the way communities engage with reading by leveraging technology to make book sharing and recommendations more efficient and tailored to individual tastes.
+
+### Connect With Me
+
+If you'd like to learn more about my work or discuss potential collaborations, please reach out to me via:
+- **LinkedIn**: [linkedin.com/in/gavinqu/](https://linkedin.com/in/gavinqu/)
+- **Email**: [gavinqu1@gmail.com](mailto:gavinqu1@gmail.com)
+
+### More About Me
+
+I'm passionate about the intersection of technology and art, using data-driven approaches to explore and expand the boundaries of what's possible in creative and impactful ways. My blog serves as a platform where I document my journey, share insights, and discuss the latest trends and innovations in technology and data science.
+
+---
+
+It's exciting to see how data can illuminate paths not only for business efficiency but also for artistic expression and social commentary. My mission is to blend these worlds seamlessly and share my findings and creations with a broader audience.
