@@ -13,14 +13,16 @@ I am Gavin Qu, a Data Creative based out of the San Francisco Bay Area. My acade
 
 I specialize in several programming languages including:
 - Python
-- JavaScript
-- SQL
 - R
+- SQL
+- JavaScript
 
 My interests are broad and include:
+- Labor and Health Economics
 - Machine Learning
 - A/B Testing
 - Web Development
+- Game Theory
 - Open Source
 
 I am currently working on a book recommendation system designed for a community-based book exchange. This project aims to enhance the way communities engage with reading by leveraging technology to make book sharing and recommendations more efficient and tailored to individual tastes.
