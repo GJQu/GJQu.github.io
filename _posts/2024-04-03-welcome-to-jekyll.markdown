@@ -6,7 +6,8 @@ categories: jekyll update
 ---
 In the learning pyramid (also known as the cone of learning), the base of the pyramid is made up of "Practiced by Doing (75%)" and "Teaching Others (90%)", the percentage represent the final retention of knowledge induced by the type of learning. 
 
-![Learning Pyramid Image](/assets/images/learning_pyramid.png)
+# ![Learning Pyramid Image](/assets/images/learning_pyramid.png)
+<img src="/assets/images/learning_pyramid.png" alt="Learning Pyramid Image" width="500" height="300">
 
 Therefore, I will be updating my blog periodically to document my journey of learning Machine Learning (ML) from theory to application, and the mathematics behind it. My exposure to ML initially is through [David Zentler-Munro's](https://davidzentlermunro.github.io/) course "Data Science for Economics" at the University of Essex, where I am currently studying as a MS Economics student. 
 
