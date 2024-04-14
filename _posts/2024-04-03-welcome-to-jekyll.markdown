@@ -30,7 +30,7 @@ comments: true  # Enable Disqus comments if set up
 published: true  # If false, the post won't be published but will be drafted
 permalink: /:categories/:title/  # Custom URL structure
 ---
-<img src="/assets/images/learning_pyramid.png" alt="Learning Pyramid Image" width="500" height="300">
+# <img src="/assets/images/learning_pyramid.png" alt="Learning Pyramid Image" width="500" height="300">
 
 In the learning pyramid (also known as the cone of learning), the base of the pyramid is made up of "Practiced by Doing (75%)" and "Teaching Others (90%)", the percentage represent the final retention of knowledge induced by the type of learning. 
 
