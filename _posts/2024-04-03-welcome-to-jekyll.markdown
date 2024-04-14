@@ -11,9 +11,6 @@ header:
   overlay_image: "/assets/images/learning_pyramid.png"  # An optional overlay image (useful for cover photos)
   overlay_filter: 0.5  # A semi-transparent filter for the overlay image (between 0 and 1)
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"  # Optional caption for the header image
-  actions:
-    - label: "More Info"  # Text on a button in the header
-      url: "https://example.com"  # URL the button links to
 toc: true  # Enable a table of contents on the page
 toc_label: "My Table of Contents"  # Label for the TOC
 toc_icon: "file-text-o"  # Icon next to the TOC title, uses Font Awesome icons
