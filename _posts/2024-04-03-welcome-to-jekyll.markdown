@@ -12,8 +12,6 @@ header:
 toc: true  # Enable a table of contents on the page
 toc_label: "My Table of Contents"  # Label for the TOC
 toc_icon: "file-text-o"  # Icon next to the TOC title, uses Font Awesome icons
-sidebar:
-  nav: "docs"  # Identifier for the navigation sidebar you want to include
 published: true  # If false, the post won't be published but will be drafted
 ---
 

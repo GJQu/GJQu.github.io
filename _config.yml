@@ -28,6 +28,15 @@ url: "https://gjqu.github.io" # the base hostname & protocol for your site, e.g.
 twitter_username: 
 github_username:  gjqu
 
+header:
+  sections:
+    - title: "About"
+      url: "/about/"
+    - title: "Home"
+      url: "/"
+    - title: "Blog"
+      url: "/blog/"
+      
 # Build settings
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
