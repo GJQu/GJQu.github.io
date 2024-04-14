@@ -2,9 +2,33 @@
 layout: post
 title:  "My First Blog Post"
 date:   2024-04-03 17:26:36 +0100
-categories: jekyll update
+categories: [Technology, Books]  # Categories for organizing posts
+tags: [Machine Learning, AI]  # Tags for spec
+author: Gavin Qu  # Name of the author
+layout: single  # Layout option, "single" is commonly used for posts
 header:
-  teaser: /assets/images/learning_pyramid.png
+  image: "/assets/images/learning_pyramid.png"  # Path to an image file to be used as a header image
+  overlay_image: "/assets/images/learning_pyramid.png"  # An optional overlay image (useful for cover photos)
+  overlay_filter: 0.5  # A semi-transparent filter for the overlay image (between 0 and 1)
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"  # Optional caption for the header image
+  actions:
+    - label: "More Info"  # Text on a button in the header
+      url: "https://example.com"  # URL the button links to
+toc: true  # Enable a table of contents on the page
+toc_label: "My Table of Contents"  # Label for the TOC
+toc_icon: "file-text-o"  # Icon next to the TOC title, uses Font Awesome icons
+gallery:
+  - url: /assets/images/image1.jpg
+    image_path: /assets/images/image1.jpg
+    alt: "an image in the gallery"
+  - url: /assets/images/image2.jpg
+    image_path: /assets/images/image2.jpg
+    alt: "another image in the gallery"
+sidebar:
+  nav: "docs"  # Identifier for the navigation sidebar you want to include
+comments: true  # Enable Disqus comments if set up
+published: true  # If false, the post won't be published but will be drafted
+permalink: /:categories/:title/  # Custom URL structure
 ---
 <img src="/assets/images/learning_pyramid.png" alt="Learning Pyramid Image" width="500" height="300">
 
