@@ -9,9 +9,7 @@ layout: single  # Layout option, "single" is commonly used for posts
 header:
   image: "/assets/images/education_pay.png"  # Path to the header image
   # caption: "Photo credit: [**Unsplash**](https://unsplash.com)"  # Optional caption for the header image
-toc: true  # Enable a table of contents on the page
-toc_label: "My Table of Contents"  # Label for the TOC
-toc_icon: "file-text-o"  # Icon next to the TOC title, uses Font Awesome icons
+toc: false  # Enable a table of contents on the page
 published: true  # If false, the post won't be published but will be drafted
 ---
 It was in the beginning of March when I had the idea of writing my dissertation on causal inference, for those in the industry - A/B testing. I was in the midst of my public policy evaluation class which is more or less based on *Mostly Harmless Econometrics* by Angrist & Pischke and *Causal Inference: The Mixtape* by Scott Cunningham. 
