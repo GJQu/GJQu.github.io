@@ -30,7 +30,7 @@ The first thesis I had in mind going into this was *Unveiling Income Dynamics: M
 To address the above problem, we try to "match" each treatment unit (T) with someone that has the opposite treatment status (C), such that (C) has all the same traits as (T). Essentially, we're inferring a treatment group and a control group without actually having to design a RCT experiment. The next step is compute the difference between the treatment and control pair of individuals, therefore the treatment effect is the weighted average of these differences. Matching is often the second best study design in the social sciences as a result. It's worth noting the fundamental assumption matching relies on, which is called the **Conditional Independence Assumption (CIA)**. Put simply, the CIA fully captures the observable characteristics of the selection bias, it allows us to say that the treatment is not correlated with the counterfactual absent the treatment. 
 
 #### Enough Jargons...
-To summarize everything I tried in my first jupyter notebook, I created a sub-dataset using the UKHLS panel with ~15 demographic variables such as labor status, gender, education and etc, that would serve as the observables to use in matching. Below are the steps to come with the similarity score (propensity score) to match individuals: 
+To summarize everything I tried in my first jupyter notebook, I created a sub-dataset using the UKHLS panel with ~15 demographic variables such as labor status, gender, education, various health status and etc, that would serve as the observables to use in matching. Below are the steps that resulted in a derived variable called the *similarity score* (propensity score) to match individuals based on observable characteristics: 
 1.	Regress the treatment dummy T—in this case it’ll be marital status—on the set of controls X (age, education, etc.)
 2.	Estimate the probability of being married (dependent) based on the covariates (independent) using a logit model perhaps. 
 3.	Run the logistic regression model to compute the propensity score for each individual, which is the predicted probability of being married given their characteristics.
@@ -43,11 +43,11 @@ Here's the distribution of income I was able to derive from the dataset:
 ![earning plot](/assets/images/earningoutput.png)
 
 ## The Second Iteration
-After the first series of data cleaning, one-hot encoding and wrangling, I had a more realistic expectation of exploratory data analysis. In the span of two weekends, I felt defeated to not be able to come up with anything useful that would illustrate my theoretical intuition yet. 
+After the first series of data cleaning, one-hot encoding and wrangling, I had a more realistic expectation of exploratory data analysis - it takes an enormous amount of focus and dedication wrangling and cleaning data. In the span of two weekends, I sometimes felt defeated to not be able to come up with anything useful that would illustrate my theoretical intuitions. 
 
-This is when a stroke of luck brought me to the office of my Data Science Economics Instructor, we agreed to meet and discuss my approach. His specialty is labor economics and health economics using predictive modeling. Another idea instantly formed in my mind, what if I can incorporate in some health data to find the underlying causal factors that affect labor market participants. 
+This is when a stroke of luck brought me to the office of my Data Science Economics Instructor, we agreed to meet and discuss my approach. His specialty is labor economics and health economics using predictive modeling. After our meeting, an idea instantly formed in my mind, what if I can incorporate in some health data to find the underlying causal factors that affect labor market participants, which would eventually open up a broader set of event studies along with marriage and gender dynamics. 
 
-There are many plausible questions, how does health outcome affect people's labor market decisions? Is there a underlying dynamic between heterogenous demographics in regard to health? These are simply spoilers for my next iteration, which I will talk about in my next blog post. Below are a few plots that illustrates distribution of health status change and labor status change, using the following encoding: 
+There are many plausible questions, for example, how does health outcome affect people's labor market decisions? Is there an underlying dynamic between heterogenous demographics in regard to health? These are simply spoilers for my next iteration, which I will talk about in my next blog post. Below are a few plots that illustrates distribution of health status change and labor status change, using the following encoding: 
 - Employed (1): 296,237 instances.
 - Unemployed (2): 25,886 instances.
 - Inactive (3): 207,761 instances.
@@ -58,8 +58,8 @@ There are many plausible questions, how does health outcome affect people's labo
 ## Lessons Learned 
 1. The initial approach will almost always end up in the wrong direction.
 2. If I'm not iterating frequently, it implies that I'm not optimizing towards my overall objective. e.g. conduct causal analysis for key economic questions of interest
-3. Don't be afraid to seek others advice, as is everything else in life, there's always someone I can learn from. 
-4. Don't be afraid of pivots, adaptability is learned through failed experiments. Luckily in data science and economic research, the marginal cost of pivoting is low. 
+3. Don't be afraid to seek others' advice, as is everything else in life, there's always someone I can learn from. 
+4. Don't be afraid of pivots, adaptability is learned through failed experiments. Luckily in data science and economic research, the marginal cost of pivoting is fairly low at an early stage. 
 
 ## Stay Tuned for the Next Blog Post 
 
