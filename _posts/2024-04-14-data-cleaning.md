@@ -25,4 +25,6 @@ The UKHLS dataset is a panel dataset collected by the UK data archive that has o
 ## The First Iteration - Matching
 The thesis I had in mind going into this was *Unveiling Income Dynamics: Machine Learning Insights from Marital Status-Based Matching Analysis*. The basic idea is to use a causal inference method called "Matching", which would properly identify causal relationships in absence of a Randomized Control Trial (RCT). Whenever you attempt to establish casual relationship between *A* and *B*, it's useful to explore the possible selection bias, because it's always plausible that there's a factor *C* which affects *A* and *B* simultaneously. This would void the underlying causal relationship between *A* and *B*. 
 
+![Average Treatment Effect on the Treated](/assets/images/matching.png)
+
 To address the above problem, we try to "match" each treatment unit (T) with someone that has the opposite treatment status (C), such that (C) has all the same traits as (T). Essentially, we're inferring a treatment group and a control group without actually having to design a RCT experiment. The next step is compute the difference between the treatment and control pair of individuals, therefore the treatment effect is the weighted average of these differences. Matching is often the second best study design in social sciences as a result. 
