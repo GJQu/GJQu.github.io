@@ -46,6 +46,5 @@ Along the way, I will also keep up with computer science foundational topics suc
 
 ## Let the Journey Begin! 
 
-"The mystery of human existence lies not in just staying alive, but in finding something to live for."
-
-― Fyodor Dostoyevsky
+> The mystery of human existence lies not in just staying alive, but in finding something to live for.
+  ― Fyodor Dostoyevsky

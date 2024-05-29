@@ -61,5 +61,5 @@ There are many plausible questions, for example, how does health outcome affect 
 
 ## Stay Tuned for the Next Blog Post 
 
-"Success is the ability to move from failure to failure without losing enthusiasm for it." 
-- Winston Churchill
+> Success is the ability to move from failure to failure without losing enthusiasm for it. 
+  - Winston Churchill
