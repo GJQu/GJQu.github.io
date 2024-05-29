@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Why I Chose to Study in the UK"
-date:   2024-04-21 17:26:36 +0100
+date:   2024-05-29 17:26:36 +0100
 categories: [School]
 tags: [Graduate School, Economics]  # Tags for spec
 author: Gavin Qu  # Name of the author
