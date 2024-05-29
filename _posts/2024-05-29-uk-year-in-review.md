@@ -13,5 +13,7 @@ header:
 toc: false  # Enable a table of contents on the page
 published: false  # If false, the post won't be published but will be drafted
 ---
+There already exist numerous articles and blog posts on graduate school advice such as the one from superstar Economist [Susan Athey's Professional Advice for Students](https://gsb-faculty.stanford.edu/susan-athey/professional-advice/). Therefore, I will limit the scope of this blog post in terms of my own anecdotal experience. For the unfamiliar, the field of economics is the study of human behavior from the individual level to the nation level and beyond, the field today largely reflects a quantitative science that relies heavily on mathematical and computational. 
 
-There already exist numerous articles and blog posts on graduate school advice such as the only from [Susan Athey]
+## My Previous Life
+My experience might sound relatable to many young economics undergraduates, at least from my own observation - there's never a short supply of eager economic students walking into intermediate microeconomic classes at my university. But unlike computer science or computer engineering, how many economics students actually go on 
