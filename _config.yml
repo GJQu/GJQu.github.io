@@ -33,6 +33,14 @@ header:
 #    - title: "Blog"
 #      url: "/blog/"
 
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      show_date: true
+
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes"
 
