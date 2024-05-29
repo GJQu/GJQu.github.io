@@ -27,7 +27,33 @@ In general, European master's programs in Economics are more rigorous and higher
 
 ![My Application Spreadsheet](/assets/images/schooltracking.png)
 
-Ultimately, after some careful deliberations, I chose University of Essex to do pursue a MS in Economics due to its research output rankings (and since Oxford/LSE didn't accept me into their programs). 
+Ultimately, after some careful deliberations, I chose University of Essex to pursue a MS in Economics due to its research output rankings (and since Oxford/LSE didn't accept me into their programs). 
 
 ## Nine Months Later... 
-I'm happy with my choice, 
+I'm happy with the intertemporal choice that I made 1 year prior luckily, and I've made amazing connections with my classmates and professors. The intricacies of ARIMA time series models, the derivations of the dynamic equations that solves the capital level of the Ramsey (Neoclassical) Growth Model, and the relationship between unemployment and vacancy in the Diamond-Pissarides-Mortenson model all readied me to become a master of the (economics) universe someday. 
+
+To my future employers reading this, here's a list of the classes I did: 
+
+1. **Macroeconomics Analysis**
+  - Solow, OLG, Endogenous Growth, Ramsey, and Pissarides Model. 
+2. **Microeconomics Analysis**
+  - Game Theory, Hicksian Demand, solving for general equilibrium
+3. **Mathematical Methods**
+  - Constrained and Unconstrained Optimization, Linear Programming, Dynamic Programming. 
+4. **Econometrics Method (with matrices)**
+  - OLS, Gauss-Markov, AIC/BIC, Heteroskedasticity, FGLS, Maximum Likelihood, Autocorrelation, Instrumental Variables, Unit Root, Cointegration, and Panel Methods. 
+5. **Data Science Economics**
+  - Lasso, Ridge, Trees, Support Vectors, Neural Nets, etc. 
+6. **Causl Inference (Public Policy Analysis)**
+  - RCT, Diff-in-Diff, IV, Matching, Regression Discontinuity, Quantile Treatment. 
+7. **Behavioral Economics in Markets**
+  - I will do a future blog on this since I do believe this is a fascinating field. 
+
+## The Good, the Bad and the Ugly
+Now, if you got this far in reading my blog, it would be unfair of me if I do not give an thorough "review" of the UK and my experience with the program. 
+
+The southern part of the UK actually surprised me with the days of sunshine every months, growing up in Seattle truly prepares you for the worst of Seasonal Depression. Aside from the weather, the people are quite friendly here, especially after a pint or two. One sad reality however, is the smell of sewage you'll often be greeted with in London and most part of its waterways in the Southeast. Coinincidentally, the first causal experiment in history was done by an English  epidemiologist named [John Snow](https://en.wikipedia.org/wiki/John_Snow) on the Thames River in 1855, who used statistical mapping methods to ultimately identify the cause of Cholera - you guessed it - it's contaminated water. John Snow became known as the father of epidemiology because of his pioneering methods now known as difference-in-difference which is widely used in medicine and economics. 
+
+Aside from the sewage smell and the lime-stone filled tap water in Southeastern UK, the country can be insanely beautiful, coupled with the Tudor town centers and Norman cathedrals that're rare sights in America. It might not look like Hogwarts everywhere you go, but the spirit of a once globe-trotting empire emanates in the air nonetheless. I could write multiple blogs on my travels in the UK alone. 
+
+
