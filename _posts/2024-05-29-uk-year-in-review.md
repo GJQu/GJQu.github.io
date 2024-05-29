@@ -56,4 +56,6 @@ The southern part of the UK actually surprised me with the days of sunshine ever
 
 Aside from the sewage smell and the lime-stone filled tap water in Southeastern UK, the country can be insanely beautiful, coupled with the Tudor town centers and Norman cathedrals that're rare sights in America. It might not look like Hogwarts everywhere you go, but the spirit of a once globe-trotting empire emanates in the air nonetheless. I could write multiple blogs on my travels in the UK alone. 
 
+It's the people you meet along the way that matters - I'm very thankful of my dissertation advisor and the friends that suffered through finals week with me. Beside, now I have reasons to visit a few more places because of them, even opens up two more continents that I have yet to visit. 
 
+## 
