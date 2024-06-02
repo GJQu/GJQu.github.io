@@ -37,6 +37,8 @@ If you'd like to learn more about my work or discuss potential collaborations, p
 
 I'm passionate about the intersection of technology and art, using data-driven approaches to explore and expand the boundaries of what's possible in creative and impactful ways. My blog serves as a platform where I document my journey, share insights, and discuss the latest trends and innovations in technology and data science.
 
+When I'm not busy with the above, you can often find me playing Chopin on the piano or skiing in Colorado.
+
 ---
 
 It's exciting to see how data can illuminate paths not only for business efficiency but also for artistic expression and social commentary. My mission is to blend these worlds seamlessly and share my findings and creations with a broader audience.
