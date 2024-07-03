@@ -7,7 +7,7 @@ header:
   image: "/assets/images/about_me.jpg"  # Path to the header image
 ---
 
-I am Gavin Qu, a Data Creative based out of the San Francisco Bay Area. My academic and professional journeys have taken me through fascinating fields like economics and data science, focusing on how data-driven solutions can improve and innovate our approach to traditional problems.
+I am Gavin Qu, a Data Creative based out of the San Francisco Bay Area, and you've found my non-AI generated blog! My academic and professional journeys have taken me through fascinating fields like labor economics and data science, focusing on how data-driven solutions can improve and innovate our approach to traditional problems.
 
 ### What I Do
 
