@@ -76,13 +76,7 @@ The term **Homophily** describes this tendency of nodes (individuals) in a netwo
 ## Return on Skills
 With each additional year of education, an individual can expect a roughly 10% increase in lifetime earnings. 
 
-In dating, this probably corresponds to looks and "attractiveness". Looks often yield higher short-term returns. 
-
-$$\ln(\text{Wage}) = \beta_0 + \beta_1 \cdot \text{Education} + \beta_2 \cdot \text{Experience} + \dots + \epsilon$$
-
-- Here, $\beta_1$ is the estimated rate of return on education, which represents the percentage increase in earnings. 
-
-"Looks" often yield higher returns than expected because of the **Halo Effect**, a cognitive bias where overall positive impressions influence the perception of less-related positive qualities (like intelligence or empathy). An excellent example would be Ted Bundy the serial murderer which infamously targeted young women, and later on built a cult following due to his attractiveness even after convicted of his crimes. 
+In dating, this probably corresponds to looks and "attractiveness". "Looks" often yield higher returns than expected because of the **Halo Effect**, a cognitive bias where overall positive impressions influence the perception of less-related positive qualities (like intelligence or empathy). An excellent example would be Ted Bundy the serial murderer which infamously targeted young women, and later on built a cult following due to his attractiveness even after convicted of his crimes. 
 
 This type of "unobservable traits" can be challenging to model and can show up as omitted variable bias. 
 
