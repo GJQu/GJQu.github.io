@@ -2,6 +2,7 @@
 layout: post
 title:  "The Economics and Data Science of Online Dating"
 date:   2025-11-02 09:00:00
+mathjax: true # LaTex
 categories: [Book]
 tags: [Book Review, Economics, Data Science]  # Tags for spec
 author: Gavin Qu  # Name of the author
