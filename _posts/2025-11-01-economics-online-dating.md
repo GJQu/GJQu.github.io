@@ -7,7 +7,7 @@ tags: [Book Review, Economics, Data Science]  # Tags for spec
 author: Gavin Qu  # Name of the author
 layout: single  # Layout option, "single" is commonly used for posts
 header:
-  image: "/assets/images/dating_pools_xkcd.png"  # Path to the header image
+  image: "/assets/images/2025/dating_pools_xkcd.png"  # Path to the header image
   image_description: "xkcd comic panes about dating" # custom alt tag for screen readers
   caption: ""  # Optional caption for the header image
 toc: false  # Enable a table of contents on the page
@@ -66,7 +66,7 @@ Within a broader network, a centralized network create *hubs* where many key pla
 
 Clustered networks can also create tight groups, like families or work teams. Trust and norms often thrive here, but new information often struggles to get in. For more on clustering, I did a blog post about how I used k-means clustering in a labor market context [here](https://gjqu.github.io/school/2024/10/01/from-medical-charts.html). 
 
-As a result, we tend to pair with people similar to ourselves, by education, profession, or even algorithmic match score such as the famous ELO scoring system used to Tinder. This often times can reinforce inequality: high-income individuals marry each other, concentrating wealth, etc. 
+As a result, we tend to pair with people similar to ourselves, by education, profession, or even algorithmic match score such as the famous ELO scoring system used by Tinder. This often times can reinforce inequality: high-income individuals marry each other, concentrating wealth, etc. 
 
 In research networks, similar clustering happens: elite universities collaborate mostly with other elites, further entrenching advantages. 
 
