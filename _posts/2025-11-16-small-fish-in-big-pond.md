@@ -40,11 +40,11 @@ The canonical BFLP equation is a simple linear model that captures the trade-off
 
 $$\text{ASC}_i = \beta_0 + \beta_1 A_i + \beta_2 \bar{A}_j + \epsilon_i$$
 
-Where $$\ASC_i$$ is the Academic Self-Concept for student i, $$\A_i$$ is the absolute ability of the student i (e.g. SAT and GRE), $$\bar{A}_j$$ is the mean ability of the peer group in school j. 
+Where $\text{ASC}_i$ is the Academic Self-Concept for student i, $\text{ASC}_i$ is the absolute ability of the student i (e.g. SAT and GRE), $$\bar{A}_j$$ is the mean ability of the peer group in school j. 
 
 The BFLP effect relies on the signs of the two key coefficients:$\beta_1$ (The Assimilation Effect): This coefficient measures the positive, direct effect of the student's own absolute ability on their self-concept. As $A_i$ increases, $\text{ASC}_i$ increases. Thus, we expect $\beta_1 > 0$. 
 
-$\beta_2$ (The Contrast Effect): This coefficient captures the effect of the peer group's average ability on the student's self-concept. The BFLP hypothesis predicts a negative effect: if a student moves to a higher-ability pond ($\bar{A}_j$ increases) while their $$\A_i$$ remains constant, their rank drops, and their $\text{ASC}_i$ decreases. Thus, one can expect $\beta_2 < 0$. This can be quite intuitive anecdotally, your high school AP Calculus class tends to feel much more daunting and stressful than a Intro to Calculus class, all else being equal. 
+$\beta_2$ (The Contrast Effect): This coefficient captures the effect of the peer group's average ability on the student's self-concept. The BFLP hypothesis predicts a negative effect: if a student moves to a higher-ability pond ($\bar{A}_j$ increases) while their $$\text{A}_i$$ remains constant, their rank drops, and their $\text{ASC}_i$ decreases. Thus, one can expect $\beta_2 < 0$. This can be quite intuitive anecdotally, your high school AP Calculus class tends to feel much more daunting and stressful than a Intro to Calculus class, all else being equal. 
 
 Together, these two forces create a tension: individuals absorb information about themselves (assimilation) while simultaneously comparing upward or downward to those around them (contrast). The resulting self-concept is not a pure readout of ability but a negotiated equilibrium shaped by context. This is where the story starts to get interesting for understanding real-world choices about ponds and fish.
 
@@ -73,9 +73,9 @@ I found the ingenious approach of this paper fascinating, especially the strong 
 ### The Hidden Cost of Centrality: An Interaction Effect
 If clustering tells us *what* the Pond is, network centrality tells us how the Pond behaves—and, more importantly, how intense the competition becomes for the Small Fish caught inside it.
 
-We’ve already established that \beta_2 captures the negative Contrast Effect: the higher the ability of the surrounding peer group, the more an individual’s relative standing slips. The next question is whether the structure of the network amplifies that pressure. This is where Betweenness Centrality $$\C_{B,j}$ enters the story.
+We’ve already established that $\beta_2$ captures the negative Contrast Effect: the higher the ability of the surrounding peer group, the more an individual’s relative standing slips. The next question is whether the structure of the network amplifies that pressure. This is where Betweenness Centrality $\text{C}_{B,j}$ enters the story.
 
-$$\C_{B,j}$$ measures how often a central actor (think a VC firm like YC) acts as the required bridge for information and resources flowing between everyone else (its portfolio companies). When a network is highly centralized, the “fish” have few alternative paths to get what they need. All roads lead through the same gatekeeper. That scarcity sharpens competition, making the negative $$\beta_2$$ effect far stronger.
+$\text{C}_{B,j}$ measures how often a central actor (think a VC firm like YC) acts as the required bridge for information and resources flowing between everyone else (its portfolio companies). When a network is highly centralized, the “fish” have few alternative paths to get what they need. All roads lead through the same gatekeeper. That scarcity sharpens competition, making the negative $$\beta_2$$ effect far stronger.
 
 To capture this formally, one can extend the BFLP model with an interaction term:
 
