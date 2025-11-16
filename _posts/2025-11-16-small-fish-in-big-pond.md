@@ -81,7 +81,7 @@ To capture this formally, one can extend the BFLP model with an interaction term
 
 $$\text{Performance}_i = \beta_0 + \beta_1 A_i + \beta_2 \bar{A}_j + \beta_3 C_{B,j} + \beta_4 (\bar{A}_j \times C_{B,j}) + \epsilon_i$$
 
-The interaction term \beta_4 is the crucial addition.
+The interaction term $\beta_4$ is the crucial addition.
 
 - Hypothesis: $$\beta_4 < 0$$
 
