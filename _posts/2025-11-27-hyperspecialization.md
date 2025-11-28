@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Specialists vs. Generalists in the Age of Hyperspecialization"
-date:   2025-11-16 09:00:00
+date:   2025-11-27 12:00:00
 categories: [Social Sciences]
 tags: [Economics, Game Development]  # Tags for spec
 author: Gavin Qu  # Name of the author
