@@ -27,19 +27,25 @@ It's Thanksgiving morning, so here's a no-stake brainstorming exercise: spend th
 So what do the above have in common, if anything at all? It all started a couple nights ago while I was casually browsing for project ideas during a my study break on Discord. I follow a handful of open-source communities: Ollama, Open WebUI, Godot (the game engine). In one of the Godot voice channels, I stumbled into a conversation between an indie developer and a retired EA game dev.
 
 ### Botany and FIFA
-The story goes like this, as told by the retired EA developer. A colleague of his had been hired right after finishing her PhD. She came recommended by a friend at EA who insisted, “You have to scoop her up—she just wrapped up her doctorate, and if we don’t, some other studio will.” So the team set up a panel interview.
+The story, as the retired EA developer told it, began with a colleague who’d been hired right after finishing her PhD. She wasn’t the typical game-studio recruit. A friend inside EA had flagged her with a kind of urgent enthusiasm: “You need to scoop her up. She just wrapped her doctorate, and if we don’t grab her, some other studio will.” That was enough to get her a full panel interview.
 
-They asked about her PhD and got a bewildering response: “Botany,” she said, the scientific study of plants. She hadn’t learned any programming until she began working on her thesis. You can imagine the confusion on the interviewers’ faces. “Okay… fascinating. But do you have any experience with game development, or have you played many games?” They were trying not to assume too much. She thought for a moment; she wasn’t really a gamer. “Not really. But I remember watching my boyfriend play one of EA’s racing titles—Need for Speed. I noticed the maple trees in one of the maps didn’t match the region.”
+When they sat down and asked about her PhD, she gave an answer that stopped the room cold: “Botany.” Not machine learning, not game development, but botany. The scientific study of plants. And, as she later explained, she hadn’t learned to code until she began doing simulations for her dissertation. You can imagine the interviewers exchanging those tiny sideways glances, trying to stay polite while wondering how this candidate had ended up in their engineering pipeline at all.
 
-The room perked up as she explained: “The eastern maples in that environment wouldn’t have the bark pattern shown in the game. And as they mature, the taller ones should develop a different pattern than the younger ones.”
+They tried to feel things out: “Fascinating… do you have any experience with game development? Or… have you played many games?” She thought about it honestly. She wasn’t a gamer. “Not really,” she said, “but I remember watching my boyfriend play one of EA’s racing games, Need for Speed. I did notice something about the maple trees in one of the maps…”
 
-After a short pause, one interviewer finally said, “We did research the trees, but if we added all that specificity across the whole game, do you know how hard it would be to optimize performance?”
+That got their attention.
 
-She replied, “I think I know a way. My thesis involved computational simulations across different plant species—and how to optimize them.”
+She went on: “The maple species in that level aren’t native to the region it’s modeled after. The bark pattern is off. And the taller, older trees should have a different bark texture than the younger ones, but the game uses the same pattern for all of them.”
 
-That was the moment the panel understood why she’d been referred. She was hired and went on to work on plant physics and environmental systems across several EA titles. When players glide across the turf in FIFA and the grass behaves just right—that was her team’s handiwork.
+Now the room was stunned. The panel shifted from mere interest to full wide-eyed who is this person?
 
-My mind was blown hearing this story. Then the economics of comparative advantage slid back into view, and I haven’t stopped thinking about it since.
+One interviewer finally cleared his throat: “We actually did research the vegetation, but if we added that level of detail across the whole game, optimizing performance would be a nightmare.”
+
+She didn’t miss a beat. “I think I know a way around that. My dissertation was on computational simulations across plant species and how to optimize them.”
+
+That was the moment everything clicked. They understood why their colleague had pushed so hard to bring her in. She was hired. And over the years, she became one of the people behind the plant physics and environmental systems across multiple EA titles. When players sprint across a perfectly rendered pitch in FIFA and the turf reacts just right, that was her team’s work.
+
+My mind was spinning after hearing this story, until the logic of comparative advantage snapped it back into focus. I haven’t stopped thinking about it since. 
 
 ### Adam Smith Joins the Chat (pun intended)
 Here's a quick refresher of comparative advantage versus absolute advantage: 
