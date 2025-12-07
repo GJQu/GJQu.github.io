@@ -1,0 +1,61 @@
+<p>It was in the beginning of March when I had the idea of writing my dissertation on causal inference, for those in the industry - A/B testing. I was in the midst of my public policy evaluation class which is more or less based on <em>Mostly Harmless Econometrics</em> by Angrist &amp; Pischke and <em>Causal Inference: The Mixtape</em> by Scott Cunningham.</p>
+
+<h2 id="the-initial-idea">The Initial Idea</h2>
+<p>One morning I was talking to myself after I finished listening to the <em>Freakonomics</em> podcast. There was one topic that I remembered clearly, it was about the discrepancy of wealth building between married couples and co-inhabiting couples. My idea is to study the effect of marital status on one’s earning, influenced by the theory and building on many empirical assumptions that there’s a gender bias when it comes to earning, specifically for women. So the obvious question is why would women get married if they’re more likely to suffer from a loss in earning? Now, this is building on previous empirical research and many modeling assumptions. I wanted to conduct my own research on this topic, but using the <a href="https://www.understandingsociety.ac.uk/about/british-household-panel-survey/">UKHLS Understanding Society Dataset</a>.</p>
+
+<h2 id="about-the-dataset">About the Dataset</h2>
+<p>The UKHLS dataset is a panel dataset collected by the UK Data Archive that has over 500,000 individual observations across 13 waves with over 2000 features. As any data analytics workflow goes, it all begins with reading the documentation tediously before coming with basic descriptive statistics, so the following events and findings unfolded.</p>
+
+<h2 id="the-first-iteration---matching">The First Iteration - Matching</h2>
+<p>The first thesis I had in mind going into this was <em>Unveiling Income Dynamics: Machine Learning Insights from Marital Status-Based Matching Analysis</em>. The basic idea is to use a causal inference method called “Matching”, which would properly identify causal relationships in absence of a Randomized Control Trial (RCT). Whenever you attempt to establish casual relationship between <em>A</em> and <em>B</em>, it’s useful to explore the possible selection bias, because it’s always plausible that there’s a factor <em>C</em> which affects <em>A</em> and <em>B</em> simultaneously. This selection bias would void the underlying causal relationship between <em>A</em> and <em>B</em>.</p>
+
+<p><img src="/assets/images/matching.png" alt="Average Treatment Effect on the Treated" /></p>
+
+<p>To address the above problem, we try to “match” each treatment unit (T) with someone that has the opposite treatment status (C), such that (C) has all the same traits as (T). Essentially, we’re inferring a treatment group and a control group without actually having to design a RCT experiment. The next step is compute the difference between the treatment and control pair of individuals, therefore the treatment effect is the weighted average of these differences. Matching is often the second best study design in the social sciences as a result. It’s worth noting the fundamental assumption matching relies on, which is called the <strong>Conditional Independence Assumption (CIA)</strong>. Put simply, the CIA fully captures the observable characteristics of the selection bias, it allows us to say that the treatment is not correlated with the counterfactual absent the treatment.</p>
+
+<h4 id="enough-jargons">Enough Jargons…</h4>
+<p>To summarize everything I tried in my first jupyter notebook, I created a sub-dataset using the UKHLS panel with ~15 demographic variables such as labor status, gender, education, various health status and etc, that would serve as the observables to use in matching. Below are the steps that resulted in a derived variable called the <em>similarity score</em> (propensity score) to match individuals based on observable characteristics:</p>
+<ol>
+  <li>Regress the treatment dummy T—in this case it’ll be marital status—on the set of controls X (age, education, etc.)</li>
+  <li>Estimate the probability of being married (dependent) based on the covariates (independent) using a logit model perhaps.</li>
+  <li>Run the logistic regression model to compute the propensity score for each individual, which is the predicted probability of being married given their characteristics.</li>
+  <li>Assess overlap and common support, check the balance. 
+a.	overlap in the propensity scores between married and unmarried groups</li>
+  <li>Implement matching algorithm such as nearest neighbor to compare married and unmarried.</li>
+</ol>
+
+<p>However, the key question is yet to be answered: do married women earn less than unmarried woman? (The details of the various robustness checks are not in the scope of this blog post for now.)
+Here’s the distribution of income I was able to derive from the dataset: 
+<img src="/assets/images/earningoutput.png" alt="earning plot" /></p>
+
+<h2 id="the-second-iteration">The Second Iteration</h2>
+<p>After the first series of data cleaning, one-hot encoding and wrangling, I had a more realistic expectation of exploratory data analysis - it takes an enormous amount of focus and dedication wrangling and cleaning data. In the span of two weekends, I sometimes felt defeated to not be able to come up with anything useful that would illustrate my theoretical intuitions.</p>
+
+<p>This is when a stroke of luck brought me to the office of my Data Science Economics Instructor, we agreed to meet and discuss my approach. His specialty is labor economics and health economics using predictive modeling. After our meeting, an idea instantly formed in my mind, what if I can incorporate in some health data to find the underlying causal factors that affect labor market participants, which would eventually open up a broader set of event studies along with marriage and gender dynamics.</p>
+
+<p>There are many plausible questions, for example, how does health outcome affect people’s labor market decisions? Is there an underlying dynamic between heterogenous demographics in regard to health? These are simply spoilers for my next iteration, which I will talk about in my next blog post. Below are a few plots that illustrates distribution of health status change and labor status change, using the following encoding:</p>
+<ul>
+  <li>Employed (1): 296,237 instances.</li>
+  <li>Unemployed (2): 25,886 instances.</li>
+  <li>Inactive (3): 207,761 instances.</li>
+  <li>Not Available/Classified (NA): 3,592 instances.</li>
+</ul>
+
+<p><img src="/assets/images/health_lfstat.png" alt="health status and labor force participation" /></p>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ol>
+  <li>The initial approach will almost always end up in the wrong direction.</li>
+  <li>If I’m not iterating frequently, it implies that I’m not optimizing towards my overall objective. e.g. conduct causal analysis for key economic questions of interest</li>
+  <li>Don’t be afraid to seek others’ advice, as is everything else in life, there’s always someone I can learn from.</li>
+  <li>Don’t be afraid of pivots, adaptability is learned through failed experiments. Luckily in data science and economic research, the marginal cost of pivoting is fairly low at an early stage.</li>
+</ol>
+
+<h2 id="stay-tuned-for-the-next-blog-post">Stay Tuned for the Next Blog Post</h2>
+
+<blockquote>
+  <p>Success is the ability to move from failure to failure without losing enthusiasm for it.</p>
+  <ul>
+    <li>Winston Churchill</li>
+  </ul>
+</blockquote>
