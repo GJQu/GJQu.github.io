@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "PCA - like a croissant that flattens over time"
-date:   2025-11-02 09:00:00
+date:   2025-12-07 09:00:00
 categories: [Book]
 tags: [Book Review, Economics, Data Science]  # Tags for spec
 author: Gavin Qu  # Name of the author
