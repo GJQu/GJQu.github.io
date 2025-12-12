@@ -7,38 +7,27 @@ header:
   image: "/assets/images/about_me.jpg"  # Path to the header image
 ---
 
-I am Gavin Qu, a Data Creative based out of the Seattle area, and you've found my non-AI generated blog! My academic and professional journeys have taken me through fascinating fields like labor economics, data science and computer science. 
+I am Gavin Qu, I like to write about the Economics and Statistics of everyday life! 
 
 ### What I Do
 
-I specialize in several languages including:
-- Python and R
-- Java
-- JavaScript
-- Bash
-
 My interests are broad and include:
-- Labor and Health Economics
+- Labor Economics
+- Causal Inference
 - Machine Learning
-- A/B Testing
 - Web Development
 - Open Source
 
-I am currently working on an AI-powered travel journal. 
-
 ### Connect With Me
 
-If you'd like to learn more about my work or discuss potential collaborations, please reach out to me via:
+If you'd like to learn more about my work, please reach out to me via:
+
 - **LinkedIn**: [linkedin.com/in/gavinqu/](https://linkedin.com/in/gavinqu/)
-- **Email**: [gavin.qu@hotmail.com](mailto:gavin.qu@hotmail.com)
+- **Github**: [github.com/GJQu](https://github.com/GJQu)
 - **X**: [x.com/GavinJQu](https://x.com/GavinJQu)
 
 ### More About Me
 
-I'm passionate about the intersection of technology and art, using data-driven approaches to explore and expand the boundaries of what's possible in creative and impactful ways. My blog serves as a platform where I document my journey, share insights, and discuss the latest trends and innovations in technology and data science.
+I'm passionate about the intersection of technology and social sciences, using data-driven approaches to explore and ask witty questions about the mundane and the oddity of life. 
 
-When I'm not busy with the above, you can often find me reading sci-fi in a cafe or skiing.
-
----
-
-It's exciting to see how data can illuminate paths not only for business efficiency but also for artistic expression and social commentary. My mission is to blend these worlds seamlessly and share my findings and creations with a broader audience.
+When I'm not busy with the above, you can often find me reading or hiking in the PNW.
