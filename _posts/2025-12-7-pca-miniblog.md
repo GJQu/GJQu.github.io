@@ -42,6 +42,8 @@ One of the applicable examples outside of image compression using PCA is in find
 
 Economists use PCA in various contexts such as ad auction, price sensitivity, and causal inference. It would be impossible to mention some and not the other examples, although infeasible in this blog post. If you'd like to learn more, you will find yourself drowning in materials by typing "Principal Compo..." in Google. 
 
+![Artistic PCA Abstraction of the Original Painting](/assets/images/2025/chatgpt_monk_by_sea.png)
+
 ## Looking Ahead
 In addition to writing about statistics and econometrics as a way to reinforce my own learning, my Sunday morning writing session has served as a powerful reset for the stress accumulated throughout the week. 
 
