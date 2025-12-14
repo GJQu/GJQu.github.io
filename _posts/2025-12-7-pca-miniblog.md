@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "PCA - like a croissant that flattens over time"
-date:   2025-12-07 09:00:00
+title:  "PCA - Like a Croissant that Flattens Over Time"
+date:   2025-12-14 09:00:00
 categories: [Mini Blog]
-tags: [Statistics]  # Tags for spec
+tags: [Statistics, Machine Learning]  # Tags for spec
 author: Gavin Qu  # Name of the author
 layout: single  # Layout option, "single" is commonly used for posts
 header:
@@ -13,6 +13,40 @@ header:
 toc: false  # Enable a table of contents on the page
 published: false  # If false, the post won't be published but will be drafted
 ---
-Good Morning from Seattle, Washington. In this week's blog post, I will be doing a mini-blog as a part of the series of "Learning by Coding" where I will be breaking down concepts from statistics with code examples. 
+Good Sunday Morning from Seattle, Washington. In this week's blog post, I will be doing a mini-blog on Principal Components, part of it is loosely based on the chapters in *The Elements of Statistical Learning*. 
 
-## Principal Component Analysis: An Aging Croissant
+## What It Is and What It Is Not? 
+Principal Component Analysis (PCA), not to be confused with Factor Analysis, it is a way to mathematically discover hidden dimensions along the existing observations. Essentially, it uses matrix algebra to capture the maximum variance along mutually uncorrelated projections of our data. 
+
+PCA does have its limitation-it does not tell us anything about causality, nor is it feature selection. If interpretability is an important objective of your project, PCA alone cannot explain the what and the why. The role of the PCA is to generate synthetic features where it captures the variance of the original features. 
+
+## Skipping Over Some Details
+Without diving too much into the mathematical concepts, computing PCA generally follows these steps: 
+  1. Standardize and center the data around its means. 
+  2. Compute the covariance matrix for the dataset. 
+  3. Solve for its Eigenvalues where $$\Sigma \mathbf{v} = \lambda \mathbf{v}$$
+    - Eigenvector $$\mathbf{v}$$ is the principal directions
+    - Eigenvalues $$\lambda$$ is the variance explained by each directions
+
+The important takeaways are that eigenvectors are orthogonal (unrelated) to each other while non-negative, we can simply rank the principal component by ordering the eigenvalues. 
+
+## A Pastry-Lover's Analogy
+Imagine a flaky croissant you brought home from that newly-opened bakery, which you ended up neglecting on the kitchen counter for too longs. As time goes on, the croissant becomes flatter and more sad-looking. Essentially, that is what becomes your dataset as you perform PCA: the first eigenvector captures the direction of maximal variance, the second vector captures the max variance *orthogonal* to the first, the third captures the max variance *orthogonal* to the second, and so on... 
+
+In the end, you end up with a croissant that is compressed based on its feature set $$\X$$ without any regard to its dependent variable $$\y$$. In a supervised learning context, it is possible where your last principal component captures 0.5% of the variance, but still contain 80% of the correlation between $$\X\$$ and $$\y$$. Which is why I remind myself with a sticky note on my fridge that reads "Dimensionality Reduction is not Feature Selection!" while I drink my coffee. 
+
+In reality, it is used for exploratory analysis in conjunction with other alternatives. 
+
+## Finding the Signal in the Noise
+One of the applicable example outside of image compression using PCA is in finding product characteristics in demand estimation. You're given a high dimensional dataset with various product attributes such as price histories, customer reviews, clickthrough rates, features, etc. One sensible approach would be to use PCA to extract common factors among features, or reduce the corpus of customer reviews into a few hundred latent topics, similar to [Latent Semantic Analysis](https://en.wikipedia.org/wiki/Latent_semantic_analysis). In essence, the PCA step serves as the pattern-generator before clustering or demand estimation. 
+
+Economists use PCA in various contexts such as ad auction, price sensitivity and causal inference. It would be impossible to mentioning some and not the other examples, although infeasible in this blog post. If you'd like to learn more, you will find yourself drowning in materials by typing "Principal Compo..." in Google. 
+
+## Looking Ahead
+In addition to writing about statistics and econometrics as a way to reinforce my own learning, my Sunday morning writing session has served as a powerful reset for the stress accumulated throughout the week. 
+
+Finally, a quote I really liked from Richard Feynman
+
+> We are trying to prove ourselves wrong as quickly as possible, because only in that way can we find progress. 
+
+Thank you for reading! 
