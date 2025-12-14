@@ -25,15 +25,15 @@ Without diving too much into the mathematical concepts, computing PCA generally 
   1. Standardize and center the data around its means. 
   2. Compute the covariance matrix for the dataset. 
   3. Solve for its Eigenvalues where $$\Sigma \mathbf{v} = \lambda \mathbf{v}$$
-    - Eigenvector $$\mathbf{v}$$ is the principal direction
-    - Eigenvalues $$\lambda$$ is the variance explained by each direction
+    * Eigenvector $$\mathbf{v}$$ is the principal direction
+    * Eigenvalues $$\lambda$$ is the variance explained by each direction
 
 The important takeaways are that eigenvectors are orthogonal (unrelated) to each other, while non-negative, we can simply rank the principal components by ordering the eigenvalues. 
 
 ## A Pastry-Lover's Analogy
 Imagine a flaky croissant you brought home from that newly-opened bakery, which you ended up neglecting on the kitchen counter for too long. As time goes on, the croissant becomes flatter and more sad-looking. Essentially, that is what becomes your dataset as you perform PCA: the first eigenvector captures the direction of maximal variance, the second vector captures the max variance *orthogonal* to the first, the third captures the max variance *orthogonal* to the second, and so on... 
 
-In the end, you end up with a croissant that is compressed based on its feature set $$\X$$ without any regard to its dependent variable $$\y$$. In a supervised learning context, it is possible that your last principal component captures 0.5% of the variance, but still contains 80% of the correlation between $$\X\$$ and $$\y$$. Which is why I remind myself with a sticky note on my fridge that reads "Dimensionality Reduction is not Feature Selection!" while I drink my coffee. 
+In the end, you end up with a croissant that is compressed based on its feature set X without any regard to its dependent variable y. In a supervised learning context, it is possible that your last principal component captures 0.5% of the variance, but still contains 80% of the correlation between X and y. Which is why I remind myself with a sticky note on my fridge that reads "Dimensionality Reduction is not Feature Selection!" while I drink my coffee. 
 
 In reality, it is used for exploratory analysis in conjunction with other alternatives. 
 
