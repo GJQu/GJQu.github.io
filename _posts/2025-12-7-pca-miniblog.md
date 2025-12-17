@@ -25,8 +25,10 @@ Without diving too much into the mathematical concepts, computing PCA generally 
   1. Standardize and center the data around its means. 
   2. Compute the covariance matrix for the dataset. 
   3. Solve for its Eigenvalues where $$\Sigma \mathbf{v} = \lambda \mathbf{v}$$
-    * Eigenvector $$\mathbf{v}$$ is the principal direction
-    * Eigenvalues $$\lambda$$ is the variance explained by each direction
+
+To interpret the results: 
+- Eigenvector $$\mathbf{v}$$ is the principal direction
+- Eigenvalues $$\lambda$$ is the variance explained by each direction
 
 The important takeaways are that eigenvectors are orthogonal (unrelated) to each other, while non-negative, we can simply rank the principal components by ordering the eigenvalues. 
 
