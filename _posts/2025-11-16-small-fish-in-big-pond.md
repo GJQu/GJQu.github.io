@@ -12,7 +12,7 @@ header:
   caption: ""  # Optional caption for the header image
 toc: false  # Enable a table of contents on the page
 mathjax: true
-published: true  # If false, the post won't be published but will be drafted
+published: False  # If false, the post won't be published but will be drafted
 ---
 The other day, I was on a walk with a friend and our conversation drifted into a familiar paradox: how the world can feel gigantic and tiny at the same time. Naturally, I asked him the age-old question: *Would you rather be a big fish in a small pond or a small fish in a big pond?* He responded that being a big fish in small pond is preferable due to the confidence and visibility one can receive. Truth is, the choice is multidimensional and tangled up with personal goals and the timing of those goals. Each option offers distinct advantages and drawbacks, many of which show up repeatedly in social science research on comparison, identity, and causal mechanisms behind human motivation. I will share what I learned digging through that work, and at the end I’ll offer my own decidedly opinionated take.
 
