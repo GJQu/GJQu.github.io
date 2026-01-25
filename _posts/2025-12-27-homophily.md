@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  ""
-date:   2025-12-28 09:00:00
+date:   2026-01-04 09:00:00
 categories: [Social Science]
 tags: [Labor Economics, Network Economics]  # Tags for spec
 author: Gavin Qu  # Name of the author
