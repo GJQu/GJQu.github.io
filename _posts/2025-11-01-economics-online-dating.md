@@ -1,17 +1,13 @@
 ---
 layout: post
-title:  "The Economics and Data Science of Online Dating"
-date:   2025-11-02 09:00:00
-categories: [Book]
-tags: [Book Review, Economics, Data Science]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/2025/dating_pools_xkcd.png"  # Path to the header image
-  image_description: "xkcd comic panes about dating" # custom alt tag for screen readers
-  caption: ""  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-published: true  # If false, the post won't be published but will be drafted
+title: "The Economics and Data Science of Online Dating"
+date: 2025-11-02 09:00:00
+categories: book
+tags: book-review economics data-science
+thumbnail: assets/img/dating_pools_xkcd.png
+description: A book review of Paul Oyer's Economics of Online Dating, exploring search theory, costly signaling, network externalities, statistical discrimination, and bargaining in modern romance.
+giscus_comments: false
+related_posts: true
 ---
 This is my first time doing a book review online, but I want to combine it with the broader theme of my blog, which is in itself a projection of my hobbies and passions in life. I believe that good ideas are rooted in the concept of *transfer learning*, the machine learning concept where knowledge gained in one domain can be repurposed to solve problems in another. So I'd like to attempt at relating the ideas found in this book to my passions. If I get something factually incorrect or logically unsound, please do send me an email. 
 

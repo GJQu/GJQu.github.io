@@ -1,18 +1,14 @@
 ---
 layout: post
-title:  "Big Fish in Little Pond and its Network Effect"
-date:   2025-11-16 09:00:00
-categories: [Social Science]
-tags: [Network Science, Economics, Data Science]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/2025/header_bigfish_networks.png"  # Path to the header image
-  image_description: "Clustered Pond vs. Centralized Pond" # custom alt tag for screen readers
-  caption: ""  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-mathjax: true
-published: False  # If false, the post won't be published but will be drafted
+title: "Big Fish in Little Pond and its Network Effect"
+date: 2025-11-16 09:00:00
+categories: social-science
+tags: network-science economics data-science
+thumbnail: assets/img/header_bigfish_networks.png
+description: Exploring the Big-Fish-Little-Pond effect through causal inference, network centrality, and matched employer-employee data to understand how peer context shapes self-concept and labor market outcomes.
+published: false
+giscus_comments: false
+related_posts: true
 ---
 The other day, I was on a walk with a friend and our conversation drifted into a familiar paradox: how the world can feel gigantic and tiny at the same time. Naturally, I asked him the age-old question: *Would you rather be a big fish in a small pond or a small fish in a big pond?* He responded that being a big fish in small pond is preferable due to the confidence and visibility one can receive. Truth is, the choice is multidimensional and tangled up with personal goals and the timing of those goals. Each option offers distinct advantages and drawbacks, many of which show up repeatedly in social science research on comparison, identity, and causal mechanisms behind human motivation. I will share what I learned digging through that work, and at the end I’ll offer my own decidedly opinionated take.
 
@@ -54,7 +50,7 @@ If you read my last blog post, you know I love a good network analysis in the co
 ### The Data Science of the Pond: Clustering Firm Types
 How can an economist or data scientist measure the abstract concept of a "Pond's Ability" ($\bar{A}_j$) in a concrete economic setting? The answer lies in analyzing the bipartite network of Matched Employer-Employee data, which models the connections between workers and firms. 
 
-![Simple Bipartite Graph](/assets/images/2025/bipartite_graph.svg)
+![Simple Bipartite Graph](/assets/img/bipartite_graph.svg)
 
 Rather than relying on noisy, single-firm measures, one can use clustering—a technique referenced in the paper ["A Distributional Framework for Matched Employer Employee Data"](https://lamadon.com/paper/blm.pdf) by Bonhomme, et al. The authors show that one can develop a tractable, two-step estimator where firms are classified in a first step. This is the formal definition of the "Pond".
 

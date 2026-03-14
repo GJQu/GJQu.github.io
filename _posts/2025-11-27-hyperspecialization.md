@@ -1,18 +1,13 @@
 ---
 layout: post
-title:  "Specialists vs. Generalists in the Age of Hyperspecialization"
-date:   2025-11-27 12:00:00
-categories: [Social Sciences]
-tags: [Economics, Game Development]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/2025/thanksgiving_adam_smith.png"  # Path to the header image
-  image_description: "Division of Labor at Thanksgiving versus a pin-factory" # custom alt tag for screen readers
-  caption: ""  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-mathjax: true
-published: true  # If false, the post won't be published but will be drafted
+title: "Specialists vs. Generalists in the Age of Hyperspecialization"
+date: 2025-11-27 12:00:00
+categories: social-sciences
+tags: economics game-development
+thumbnail: assets/img/thanksgiving_adam_smith.png
+description: A Thanksgiving reflection on comparative advantage, the division of labor, and hyperspecialization, illustrated by a botanist turned EA game developer and Adam Smith's pin factory.
+giscus_comments: false
+related_posts: true
 ---
 Happy Thanksgiving, everyone, I am keeping today's blog on the shorter end, an under 5-minute read and I will spare you LaTex equations. 
 

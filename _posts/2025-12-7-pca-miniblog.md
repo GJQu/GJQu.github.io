@@ -1,17 +1,13 @@
 ---
 layout: post
-title:  "PCA - Like a Croissant that Flattens Over Time"
-date:   2025-12-14 09:00:00
-categories: [Mini Blog]
-tags: [Statistics, Machine Learning]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/2025/fredrich_monk_by_sea.jpg"  # Path to the header image
-  image_description: "Painting by German Artist Caspar David Friedrich." # custom alt tag for screen readers
-  caption: "The Monk by the Sea by Caspar David Friedrich"  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-published: true  # If false, the post won't be published but will be drafted
+title: "PCA - Like a Croissant that Flattens Over Time"
+date: 2025-12-14 09:00:00
+categories: mini-blog
+tags: statistics machine-learning
+thumbnail: assets/img/fredrich_monk_by_sea.jpg
+description: A mini-blog explaining Principal Component Analysis using a croissant analogy, covering eigenvalues, dimensionality reduction, and applications in demand estimation.
+giscus_comments: false
+related_posts: true
 ---
 Good Sunday Morning from Seattle, Washington. In this week's blog post, I will be doing a mini-blog on Principal Components, part of which is loosely based on the chapters in *The Elements of Statistical Learning*. 
 
@@ -44,7 +40,7 @@ One of the applicable examples outside of image compression using PCA is in find
 
 Economists use PCA in various contexts such as ad auction, price sensitivity, and causal inference. It would be impossible to mention some and not the other examples, although infeasible in this blog post. If you'd like to learn more, you will find yourself drowning in materials by typing "Principal Compo..." in Google. 
 
-![Artistic PCA Abstraction of the Original Painting](/assets/images/2025/chatgpt_monk_by_sea.png)
+![Artistic PCA Abstraction of the Original Painting](/assets/img/chatgpt_monk_by_sea.png)
 
 ## Looking Ahead
 In addition to writing about statistics and econometrics as a way to reinforce my own learning, my Sunday morning writing session has served as a powerful reset for the stress accumulated throughout the week. 
