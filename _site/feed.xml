@@ -1,4 +1,499 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-14T18:55:50+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gavin’s Blog</title><subtitle>I&apos;m passionate about data-driven solutions through the lens of the social sciences and the intersection of technology and art.  Occasionally, I write blogs documenting my journey. </subtitle><entry><title type="html">My First Blog Post</title><link href="http://localhost:4000/technology/books/2024/04/03/welcome-to-jekyll.html" rel="alternate" type="text/html" title="My First Blog Post" /><published>2024-04-03T17:26:36+01:00</published><updated>2024-04-03T17:26:36+01:00</updated><id>http://localhost:4000/technology/books/2024/04/03/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/technology/books/2024/04/03/welcome-to-jekyll.html"><![CDATA[<p>In the learning pyramid (also known as the cone of learning), the base of the pyramid is made up of “Practiced by Doing (75%)” and “Teaching Others (90%)”, the percentage represent the final retention of knowledge induced by the type of learning.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-13T19:13:02-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>I&apos;m passionate about data-driven solutions through the lens of the social sciences and the intersection of technology and economics. Occasionally, I write blogs documenting my journey.
+</subtitle><entry><title type="html">PCA - Like a Croissant that Flattens Over Time</title><link href="http://localhost:4000/blog/2025/pca-miniblog/" rel="alternate" type="text/html" title="PCA - Like a Croissant that Flattens Over Time" /><published>2025-12-14T01:00:00-08:00</published><updated>2025-12-14T01:00:00-08:00</updated><id>http://localhost:4000/blog/2025/pca-miniblog</id><content type="html" xml:base="http://localhost:4000/blog/2025/pca-miniblog/"><![CDATA[<p>Good Sunday Morning from Seattle, Washington. In this week’s blog post, I will be doing a mini-blog on Principal Components, part of which is loosely based on the chapters in <em>The Elements of Statistical Learning</em>.</p>
+
+<h2 id="what-it-is-and-what-it-is-not">What It Is and What It Is Not?</h2>
+<p>Principal Component Analysis (PCA), not to be confused with Factor Analysis, it is a way to mathematically discover hidden dimensions along the existing observations. Essentially, it uses matrix algebra to capture the maximum variance along mutually uncorrelated projections of our data.</p>
+
+<p>PCA does have its limitations; it does not tell us anything about causality, nor is it feature selection. If interpretability is an important objective of your project, PCA alone cannot explain the what and the why. The role of the PCA is to generate synthetic features that capture the variance of the original features.</p>
+
+<h2 id="skipping-over-some-details">Skipping Over Some Details</h2>
+<p>Without diving too much into the mathematical concepts, computing PCA generally follows these steps:</p>
+<ol>
+  <li>Standardize and center the data around its means.</li>
+  <li>Compute the covariance matrix for the dataset.</li>
+  <li>Solve for its Eigenvalues where \(\Sigma \mathbf{v} = \lambda \mathbf{v}\)</li>
+</ol>
+
+<p>To interpret the results:</p>
+<ul>
+  <li>Eigenvector \(\mathbf{v}\) is the principal direction</li>
+  <li>Eigenvalues \(\lambda\) is the variance explained by each direction</li>
+</ul>
+
+<p>The important takeaways are that eigenvectors are orthogonal (unrelated) to each other, while non-negative, we can simply rank the principal components by ordering the eigenvalues.</p>
+
+<h2 id="a-pastry-lovers-analogy">A Pastry-Lover’s Analogy</h2>
+<p>Imagine a flaky croissant you brought home from that newly-opened bakery, which you ended up neglecting on the kitchen counter for too long. As time goes on, the croissant becomes flatter and more sad-looking. Essentially, that is what becomes your dataset as you perform PCA: the first eigenvector captures the direction of maximal variance, the second vector captures the max variance <em>orthogonal</em> to the first, the third captures the max variance <em>orthogonal</em> to the second, and so on…</p>
+
+<p>In the end, you end up with a croissant that is compressed based on its feature set X without any regard to its dependent variable y. In a supervised learning context, it is possible that your last principal component captures 0.5% of the variance, but still contains 80% of the correlation between X and y. Which is why I remind myself with a sticky note on my fridge that reads “Dimensionality Reduction is not Feature Selection!” while I drink my coffee.</p>
+
+<p>In reality, it is used for exploratory analysis in conjunction with other alternatives.</p>
+
+<h2 id="finding-the-signal-in-the-noise">Finding the Signal in the Noise</h2>
+<p>One of the applicable examples outside of image compression using PCA is in finding product characteristics in demand estimation. You’re given a high-dimensional dataset with various product attributes such as price histories, customer reviews, clickthrough rates, features, etc. One sensible approach would be to use PCA to extract common factors among features, or reduce the corpus of customer reviews into a few hundred latent topics, similar to <a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis">Latent Semantic Analysis</a>. In essence, the PCA step serves as the pattern-generator before clustering or demand estimation.</p>
+
+<p>Economists use PCA in various contexts such as ad auction, price sensitivity, and causal inference. It would be impossible to mention some and not the other examples, although infeasible in this blog post. If you’d like to learn more, you will find yourself drowning in materials by typing “Principal Compo…” in Google.</p>
+
+<p><img src="/assets/img/chatgpt_monk_by_sea.png" alt="Artistic PCA Abstraction of the Original Painting" /></p>
+
+<h2 id="looking-ahead">Looking Ahead</h2>
+<p>In addition to writing about statistics and econometrics as a way to reinforce my own learning, my Sunday morning writing session has served as a powerful reset for the stress accumulated throughout the week.</p>
+
+<p>Finally, a quote I really liked from Richard Feynman</p>
+
+<blockquote>
+  <p>We are trying to prove ourselves wrong as quickly as possible, because only in that way can we find progress.</p>
+</blockquote>
+
+<p>Thank you for reading!</p>]]></content><author><name></name></author><category term="mini-blog" /><category term="statistics" /><category term="machine-learning" /><summary type="html"><![CDATA[A mini-blog explaining Principal Component Analysis using a croissant analogy, covering eigenvalues, dimensionality reduction, and applications in demand estimation.]]></summary></entry><entry><title type="html">Specialists vs. Generalists in the Age of Hyperspecialization</title><link href="http://localhost:4000/blog/2025/hyperspecialization/" rel="alternate" type="text/html" title="Specialists vs. Generalists in the Age of Hyperspecialization" /><published>2025-11-27T04:00:00-08:00</published><updated>2025-11-27T04:00:00-08:00</updated><id>http://localhost:4000/blog/2025/hyperspecialization</id><content type="html" xml:base="http://localhost:4000/blog/2025/hyperspecialization/"><![CDATA[<p>Happy Thanksgiving, everyone, I am keeping today’s blog on the shorter end, an under 5-minute read and I will spare you LaTex equations.</p>
+
+<h2 id="what-do-the-following-have-in-common">What Do the Following Have in Common?</h2>
+<p>It’s Thanksgiving morning, so here’s a no-stake brainstorming exercise: spend the next 3 minutes to write down as many ideas as you can, they don’t need to relate to each other. Once you are done, connect the nodes of ideas and map out whatever patterns you can find. Curious for what I wrote down?</p>
+
+<ol>
+  <li>Botany</li>
+  <li>Adam Smith</li>
+  <li>FIFA (the video game by EA)</li>
+  <li>Thanksgiving dinner</li>
+</ol>
+
+<p>So what do the above have in common, if anything at all? It all started a couple nights ago while I was casually browsing for project ideas during a my study break on Discord. I follow a handful of open-source communities: Ollama, Open WebUI, Godot (the game engine). In one of the Godot voice channels, I stumbled into a conversation between an indie developer and a retired EA game dev.</p>
+
+<h3 id="botany-and-fifa">Botany and FIFA</h3>
+<p>The story, as the retired EA developer told it, began with a colleague who’d been hired right after finishing her PhD. She wasn’t the typical game-studio recruit. A friend inside EA had flagged her with a kind of urgent enthusiasm: “You need to scoop her up. She just wrapped her doctorate, and if we don’t grab her, some other studio will.” That was enough to get her a full panel interview.</p>
+
+<p>When they sat down and asked about her PhD, she gave an answer that stopped the room cold: “Botany.” Not machine learning, not game development, but botany. The scientific study of plants. And, as she later explained, she hadn’t learned to code until she began doing simulations for her dissertation. You can imagine the interviewers exchanging those tiny sideways glances, trying to stay polite while wondering how this candidate had ended up in their engineering pipeline at all.</p>
+
+<p>They tried to feel things out: “Fascinating… do you have any experience with game development? Or… have you played many games?” She thought about it honestly. She wasn’t a gamer. “Not really,” she said, “but I remember watching my boyfriend play one of EA’s racing games, Need for Speed. I did notice something about the maple trees in one of the maps…”</p>
+
+<p>That got their attention.</p>
+
+<p>She went on: “The maple species in that level aren’t native to the region it’s modeled after. The bark pattern is off. And the taller, older trees should have a different bark texture than the younger ones, but the game uses the same pattern for all of them.”</p>
+
+<p>Now the room was stunned. The panel shifted from mere interest to full wide-eyed who is this person?</p>
+
+<p>One interviewer finally cleared his throat: “We actually did research the vegetation, but if we added that level of detail across the whole game, optimizing performance would be a nightmare.”</p>
+
+<p>She didn’t miss a beat. “I think I know a way around that. My dissertation was on computational simulations across plant species and how to optimize them.”</p>
+
+<p>That was the moment everything clicked. They understood why their colleague had pushed so hard to bring her in. She was hired. And over the years, she became one of the people behind the plant physics and environmental systems across multiple EA titles. When players sprint across a perfectly rendered pitch in FIFA and the turf reacts just right, that was her team’s work.</p>
+
+<p>My mind was spinning after hearing this story, until the logic of comparative advantage snapped it back into focus. I haven’t stopped thinking about it since.</p>
+
+<h3 id="adam-smith-joins-the-chat-pun-intended">Adam Smith Joins the Chat (pun intended)</h3>
+<p>Here’s a quick refresher of comparative advantage versus absolute advantage:</p>
+
+<ol>
+  <li>Comparative advantage is about which producer of goods has lower opportunity cost, in other words, who gives up less while producing the same thing.
+    <ul>
+      <li>One can say that China has long held a comparative advantage in iPhone assembly.</li>
+    </ul>
+  </li>
+  <li>Absolute advantage describes a producer that can produce something with fewer resources, all else equal.
+    <ul>
+      <li>The American software industry has enjoyed this for decades, especially since the 1960s.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>This concept of comparative and absolute advantages doesn’t just apply to an entire companies or the economy, it applies to individuals too. It was first posited by the economist and philosopher Adam Smith in <em>The Wealth of Nations</em> (1776), although the idea itself is quite ancient and can be traced by to the Roman times or earlier. Below is the famous pin-factory example in the first chapter of the book on the <em>division of labor</em>.</p>
+
+<blockquote>
+  <p>“I have seen a small manufactory of this kind where ten men only were employed, and where some of them consequently performed two or three distinct operations. But though they were very poor, and therefore but indifferently accommodated with the necessary machinery, they could, when they exerted themselves, make among them about twelve pounds of pins in a day. There are in a pound upwards of four thousand pins of a middling size. Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day.”</p>
+</blockquote>
+
+<p>Smith pointed out that if those same workers attempted the entire process independently, chances are they won’t even manage twenty pins a day. He was a big proponent of free trade, pushing for trade based on productive superiority (absolute advantage) rather than the targeted mercantilism of his era.</p>
+
+<p>Later on, David Ricardo extended Smith’s ideas in 1817. He showed that absolute advantage cannot explain all trade. Comparative advantage, where opportunity cost of a producer determines the pareto-efficient (term not yet used at his time) outcome of international trade. This reveals that even a country superior at everything still benefits from specializing where it gives up the least. Trade becomes mutually beneficial not because of dominance, but because of relative sacrifice.</p>
+
+<p>Both comparative advantage and absolute advantage show up today in patterns of specialization and productivity differences in various economic models.</p>
+
+<h3 id="thanksgiving-dishes-and-the-division-of-labor">Thanksgiving Dishes and the Division of Labor</h3>
+<p>Every year, my family gets together to make our spread of holiday dishes. I’m the one in charge of the cranberry sauce and a potato-and-ham casserole. My father is up at 6 a.m. tending the brisket or ribeye in the smoker, while my mom handles the desserts and the turkey. Over the years, my cranberry sauce has evolved into a Thanksgiving staple. My father’s smoked ribeye has become so popular that it reliably draws family friends to our table—and brings a bit of extra stress with it. I’m sure your own family and friends have their version of this division of labor during the holiday rush.</p>
+
+<p>We are not explicitly trading our products of labor during thanksgiving day, but the dish-prepping process itself is eerily similar to that gripping story of the game studio developer, and Adam Smith’s pin-factory.</p>
+
+<h2 id="idea-flow">Idea Flow</h2>
+<p>Hopefully the ideas and concepts you jotted down during your brain-storming session were as rivetting as the story I overheard. Every morning, I sit in my office and jot down as many ideas as I can in five minutes. Most of them are not workable for writing or experimentation, but every once in a while a good one surfaces, something that I test at work or fold into a personal projects. This ritual has done wonders for my blog writing lately.</p>
+
+<p>I’d love to hear your own anecdotes about comparative and absolute advantage, or any reflections on economics and statistics in general.</p>
+
+<p>Happy Thanksgiving. Enjoy the day with your family, most of us are not saving lives out here in the corporate world, so spend that precious time with the people you care about.</p>
+
+<blockquote>
+  <p>Creativity is doing more than the first thing that comes to your mind.</p>
+</blockquote>]]></content><author><name></name></author><category term="social-sciences" /><category term="economics" /><category term="game-development" /><summary type="html"><![CDATA[A Thanksgiving reflection on comparative advantage, the division of labor, and hyperspecialization, illustrated by a botanist turned EA game developer and Adam Smith's pin factory.]]></summary></entry><entry><title type="html">The Economics and Data Science of Online Dating</title><link href="http://localhost:4000/blog/2025/economics-online-dating/" rel="alternate" type="text/html" title="The Economics and Data Science of Online Dating" /><published>2025-11-02T01:00:00-08:00</published><updated>2025-11-02T01:00:00-08:00</updated><id>http://localhost:4000/blog/2025/economics-online-dating</id><content type="html" xml:base="http://localhost:4000/blog/2025/economics-online-dating/"><![CDATA[<p>This is my first time doing a book review online, but I want to combine it with the broader theme of my blog, which is in itself a projection of my hobbies and passions in life. I believe that good ideas are rooted in the concept of <em>transfer learning</em>, the machine learning concept where knowledge gained in one domain can be repurposed to solve problems in another. So I’d like to attempt at relating the ideas found in this book to my passions. If I get something factually incorrect or logically unsound, please do send me an email.</p>
+
+<h2 id="search-theory">Search Theory</h2>
+<p>If you have ever tried online dating, you would run into this dilemma at least one: “When do you stop using the app?” This is likely one of the biggest complaints of online dating, is that you participate in a rather <em>thick</em> market in economic terms, meaning a market with an abundance of participants. The sheer number of matches and chats to go through often result in decision fatigue.</p>
+
+<p>This is a common phenomenon in large social networks. Imagine two towns:</p>
+
+<ul>
+  <li>In Town A, everyone is connected to everyone (a dense network).</li>
+  <li>In Town B, people are connected in small cliques with few bridges between them (a sparse network).</li>
+</ul>
+
+<p>A new idea or tool, such as the personal computer, will spread fast in Town A, but may take years or decades in Town B because information bottlenecks at the social boundaries.</p>
+
+<p>Online dating is more or less a social network that benefits from such network externalities as the above analogy. At the same time, dating in general is also a <strong>Search Problem</strong>. You are looking for a match in a sea of potential candidates. Every date you go on costs time (especially leading up to the first date), emotional energy, and opportunity cost. Eventually, rational people <em>settle</em> at some point, usually once the expected benefits of continued searching is lower than the cost. Economists call this the <em>optimal stopping rule</em>.</p>
+
+<p>In Computer science and statistics, the optimal stopping rule often shows up as the <strong>Secretary Problem</strong>, where an algorithm sequentially observes a list of candidates and must select the single best one, without backtracking. The goal is to minimize computational cost of the search while maximizing the probability of selecting the best option, often using Monte Carlo simulations to estimate the results.</p>
+
+<p>I believe this is an extremely relevant concepts in online dating apps, depending on your “objective function” of dating, the dense network and nature of the algorithm can make it hard to know when to “settle”. By the way, the author reframes “settling” as an efficient decision, not a failure in typical semantics.</p>
+
+<h2 id="cheap-talk-and-credible-signaling">Cheap Talk and Credible Signaling</h2>
+<p>Most online dating profiles are full of cheap talks, which are claims that cost nothing to make. “I love hiking” or “I’m six feet tall.” Since there is no immediate penalty for lying, exaggeration becomes fairly common. There has been studies showing that the  height distribution that men state on dating apps are above the normal distribution of height in the actual population.</p>
+
+<p>However, large lies are costly later. This is where costly signaling comes in: actions that require effort or sacrifice makes them more credible.</p>
+
+<p>In economics, the <strong>Costly Signal</strong> principle was first formalized by Michael Spence’s work on the job market. Essentially, the signal must be less costly for the high-quality agent to produce than for the low-quality agent. For example, in product warranty a long, comprehensive warranty on a product is a credible signal of high quality. It is less costly for a manufacturer of a durable product to offer a long warranty then it would be for a manufacturer of a lower-quality product.</p>
+
+<p>In data science, when detecting financial fraud, you would search for credible signals like sudden, large transfers to a new account. These signals are credible because they are costly to ignore, since a high false negative rate is unacceptable.</p>
+
+<p>In online dating, posting recent, realistic photos or describing activities and hobbies you actually do, signals authenticity and credibility. Just as in job markets, where obtaining a degree signals competence (because it would be hard to fake). In dating, small, believable costs separate honest signals from cheap talk.</p>
+
+<h2 id="network-externalities-the-facebook-effect">Network Externalities (The Facebook Effect)</h2>
+<p>I briefly introduced this concept at the beginning where I stated that dating platforms exhibit <strong>network effects</strong>, their value rises as more users join. A small dating site with ten members is nearly useless, especially if sparsely distributed in the world. But with millions, it’s indispensable. This mirrors social media, where participation itself creates value.</p>
+
+<p>But it also creates <em>winner-takes-all</em> dynamics: big platforms such as Hinge dominate because users flock where others already are. Demands breeds demand essentially.</p>
+
+<h2 id="statistical-discrimination">Statistical Discrimination</h2>
+<p>This is one of the more uncomfortable sounding topics but it is crucial. Statistical discrimination is where a decision-maker (an employer, a lender or an algorithm) makes decisions about an individual based on the average or statistical characteristics of the group to which that individual belongs. This occurs when the agent has imperfect information about the individual’s true, unobservable quality. Crucially, this type of discrimination can occur even if the agent is rational and holds no prejudice (taste-based bias) against the group.</p>
+
+<p>When given imperfect information in a game theory sense, an agent has to fill the information gap by using a group’s statistical profile as a <em>proxy</em> for the individual’s unobserved quality (e.g. creditworthiness, productivity).</p>
+
+<p>In the case of insurance premiums, young male drivers and young drivers in general have a statistically higher risk of accidents than other groups. The company uses the group statistic to price that individual’s risk. This can create self-fulfilling prophecies and bias downstream, which rationally discourages individuals in that group to take on risk, and thereby reinforcing the initial, discriminatory statistic.</p>
+
+<p>In online dating, stereotypes exist, which may lead to participants undervaluing themselves and contribute to their own gender based limitation later on.</p>
+
+<h2 id="thick-vs-thin-markets">Thick vs. Thin Markets</h2>
+<p>A thick market has many participants and diverse options, like New York’s dating scene or Silicon Valley’s startup scene. A thin markets has few matches, like the Town A example from earlier. Thick markets produce better matches and higher satisfaction in general, but can also create decision paralysis as a result of “too many fish”. Thin markets on the other hand offer fewer options but stronger incentive to commit early. I am a strong believer in that <em>big ponds</em> make for happier fish, in both work and romance alike.</p>
+
+<p>This is also why dating apps don’t show you everyone in your area all at once, and instead uses a <strong>recommendation system</strong> to quickly pair users with options out of millions. Using example from Uber, dynamic pricing can keep market “thick” by incentivizing the scarce side (like drivers). Dating apps such as Hinge displays a section called <strong>Standouts</strong>, where it updates daily with outliers in your usual dating pool to keep you engaged in the market.</p>
+
+<h2 id="positive-assortative-mating-and-clustering">Positive Assortative Mating and Clustering</h2>
+<p>Within a broader network, a centralized network create <em>hubs</em> where many key players connect, like those star-shaped airline maps. These hubs wield enormous influence. Think of the meteoric virality of Labubu on X.</p>
+
+<p>Clustered networks can also create tight groups, like families or work teams. Trust and norms often thrive here, but new information often struggles to get in. For more on clustering, I did a blog post about how I used k-means clustering in a labor market context <a href="https://gjqu.github.io/school/2024/10/01/from-medical-charts.html">here</a>.</p>
+
+<p>As a result, we tend to pair with people similar to ourselves, by education, profession, or even algorithmic match score such as the famous ELO scoring system used by Tinder. This often times can reinforce inequality: high-income individuals marry each other, concentrating wealth, etc.</p>
+
+<p>In research networks, similar clustering happens: elite universities collaborate mostly with other elites, further entrenching advantages.</p>
+
+<p>The term <strong>Homophily</strong> describes this tendency of nodes (individuals) in a network to connect to other nodes that share a similar traits. I’m sure this can be observed in many facets of daily life such as political views, hobbies and education.</p>
+
+<h2 id="return-on-skills">Return on Skills</h2>
+<p>With each additional year of education, an individual can expect a roughly 10% increase in lifetime earnings.</p>
+
+<p>In dating, this probably corresponds to looks and “attractiveness”. “Looks” often yield higher returns than expected because of the <strong>Halo Effect</strong>, a cognitive bias where overall positive impressions influence the perception of less-related positive qualities (like intelligence or empathy). An excellent example would be Ted Bundy the serial murderer which infamously targeted young women, and later on built a cult following due to his attractiveness even after convicted of his crimes.</p>
+
+<p>This type of “unobservable traits” can be challenging to model and can show up as omitted variable bias.</p>
+
+<h2 id="the-family-as-a-micro-economy">The Family as a Micro-Economy</h2>
+<p>Another fundamental concept in labor economics and game theory is negotiation or bargaining. Women’s wage gap has been largely driven by opportunity cost of child bearing. Dual-career households face negotiation problems familiar to game theorists: resource allocation, specialization, and risk-sharing.</p>
+
+<p>The decision-making process in a dual-career household is essentially a <em>cooperative bargaining game</em>. The couple acts as a unit, trying to maximize a joint outcome (household utility), but they must negotiate how to divide labor, income, and time.</p>
+
+<p>In Nash Bargaining Solution, a person’s power in the negotiation is usually determined by their “threat point”, the utility level they would achieve if the marriage or cooperation failed.</p>
+
+<ul>
+  <li>
+    <p>Due to the wage gap, women has a lower opportunity cost for leaving the labor force or reducing hours.</p>
+  </li>
+  <li>
+    <p>This lower opportunity cost translates to a weaker bargaining position within household, leading to an equilibrium where the woman specializes more in home production.</p>
+  </li>
+  <li>
+    <p>This choice, as you might have noticed, will further reinforce the wage gap by slowing her career growth, making her threat point even lower in the future.</p>
+  </li>
+</ul>
+
+<p>In the end, the couple must negotiate who uses their non-work time for leisure, childcare, or home maintenance. Data shows women, even in dual-career couples, tender to shoulder the “second shift” due to specialization decisions such as pregnancy.</p>
+
+<p>Perhaps this is far stretched from dating apps, but the prominence of dating apps do correlate with the economic trend of the declining benefits of marriage.</p>
+
+<p>An economist would advise: don’t treat love as a sunk cost, but consider its future states.</p>
+
+<p>A data scientist would say to model the relationship’s utility as a dynamic process and focus on maximizing its expected future value based on real-time evidence (leading indicators).</p>
+
+<p>The ultimate advice here is probably to employ a <strong>Bayesian Stopping</strong> framework by setting a threshold, regularly evaluate the predicted future utility. And don’t wait for total failure.</p>
+
+<p>“Don’t optimize for your current local maximum; model the trajectory and optimize for your global maximum in future utility.”</p>
+
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>I think Paul Oyer’s <em>Economics of Online Dating</em> is far more than a witty take on Hinge or Tinder, it’s a study in how networks and information shape even our most personal choices. The book blends case studies in behavioral science, game theory, data science, information theory, and labor economics into a coherent view of online dating and modern love.</p>
+
+<p>Have you used dating apps recently? Which of these theories feel real to you, and which seem absurd in practice?</p>
+
+<blockquote>
+  <p>Doing great work is a depth-first search whose root node is the desire to. So “If at first you don’t succeed, try, try again” isn’t quite right. It should be: If at first you don’t succeed, either try again, or backtrack and then try again.</p>
+  <ul>
+    <li>Paul Graham</li>
+  </ul>
+</blockquote>]]></content><author><name></name></author><category term="book" /><category term="book-review" /><category term="economics" /><category term="data-science" /><summary type="html"><![CDATA[A book review of Paul Oyer's Economics of Online Dating, exploring search theory, costly signaling, network externalities, statistical discrimination, and bargaining in modern romance.]]></summary></entry><entry><title type="html">From Medical Charts to Economic Markets</title><link href="http://localhost:4000/blog/2024/from-medical-charts/" rel="alternate" type="text/html" title="From Medical Charts to Economic Markets" /><published>2024-10-01T01:00:36-07:00</published><updated>2024-10-01T01:00:36-07:00</updated><id>http://localhost:4000/blog/2024/from-medical-charts</id><content type="html" xml:base="http://localhost:4000/blog/2024/from-medical-charts/"><![CDATA[<p>I want to start this post by thanking those who supported me and kept me sane throughout this journey of economic research and data science, especially my advisor, Dr. David Zentler-Munro, at the University of Essex.</p>
+
+<h2 id="a-little-background">A Little Background</h2>
+<p>As with all “great” data science projects, you first develop all the research questions and then train the model based on your given data. Right?</p>
+
+<p>Of course, assuming you want to discover halfway through that you don’t have the data in the right format and the missing values are imputed incorrectly based on your proxy variables.</p>
+
+<p>To say the amount of data-cleaning and data-wrangling are the bulk of the research would be an understatement. By definition, data cleaning is the process of identifying and correcting errors, spotting missing values, and removing duplicates to impute a dataset that accurately represents the real world it’s supposed to model, or at the very least allows the computer to process it. On the other hand, data wrangling is about transforming the data from the raw form into a more usable format, whether creating proxy variables or simply merging multiple datasets. More on data wrangling later, for now, think of data cleaning as the mortar and data wrangling as the pestle—one provides the foundation by holding everything together, while the other grinds and reshapes the raw ingredients into something useful.</p>
+
+<h2 id="data-cleaning">Data Cleaning</h2>
+<p>First, I extracted health-related data from the UKHLS dataset.</p>
+
+<p>Focusing on 27 health variables, along with individual IDs, age, and wave identifiers I created. The health data came in three types, which added some complexity, but I learned to manage the inconsistencies in the dataset. The two key variables I used were ‘disdif’ and ‘hcond.’ ‘Disdif’ tracks difficulties with daily activities like walking, and ‘hcond’ helped me create a new chronic health variable called ‘healthcond.’ This variable captures long-term health conditions, such as cardiovascular diseases, cancer, chronic respiratory diseases, and diabetes, which are classified as chronic by the World Health Organization.</p>
+
+<p>To deal with missing data (marked with -9), I converted them to ‘NaN’ (Not a Number) in Python. I then filled in missing health condition data by carrying forward a diagnosis from earlier waves, unless all previous waves had missing data, in which case I left it as NaN.</p>
+
+<p>We’ll come back to data cleaning and data wrangling in more detail in a later blog post.</p>
+
+<h2 id="visualization-of-frailty-and-mortality">Visualization of Frailty and Mortality</h2>
+<p>Frailty is used as a measurement of ratio of numbers of health conditions an individual have divided by the total number (27) of possible health conditions used in the survey.</p>
+
+<p>The plot below  illustrates the fraction of individuals who have passed away by a given age, with a vertical dashed line marking age 60, a notable transition point in both health and economic life stages. As expected, the mortality fraction remains relatively low throughout early and middle adulthood but increases sharply after age 60. The mortality rate rises exponentially, reflecting known patterns of age-related health decline. This steep increase in mortality is consistent with findings in gerontology and reflects changes in immune system function, vulnerability to chronic diseases, and overall frailty.</p>
+
+<p>The data also shows an accelerated increase in mortality after age 90, with death becoming almost universal for individuals aged 105 and older. This graph is crucial as it sets the stage for understanding how frailty develops over time, reinforcing the need to distinguish between different health types when analyzing labor market outcomes.</p>
+
+<p>The next plot shows the average frailty index binned by age. Here, frailty is measured as a ratio of health deficits over possible health deficits, with frailty increasing as health deteriorates. The vertical dashed line again marks age 60, where the uptick in frailty becomes most pronounced.</p>
+
+<p><img src="/assets/img/frailty_medical_chart_binned.webp" alt="Frailty Chart" /></p>
+
+<p>The scatterplot reveals an interesting pattern: while frailty remains relatively stable before age 60, a sharp upward trajectory emerges thereafter. This is particularly important because it highlights the heterogeneity in health outcomes among older adults. The increasing error bars in the later years suggest that there is greater variation in health among the elderly, supporting the notion that distinct health types might be influencing these differences. Those are all consistent with gerontology literature regarding the change in human immunological systems after age 60.</p>
+
+<p>This divergence becomes the foundation for my subsequent k-means clustering analysis, which seeks to group individuals into health types based on their frailty progression. The variation in frailty also offers insight into employment dynamics post-retirement age, as individuals with higher frailty are likely to face more significant barriers to continued labor market participation.</p>
+
+<h2 id="machine-learning-and-statistical-modeling">Machine Learning and Statistical Modeling</h2>
+<p>For those that are already familiar with unsupervised machine learning methods, feel free to skip to the next section. I used K-means clustering which is basically a statistical method to group similar samples together based on some variables. In addition, it will also aim to make the different groups as different as possible while grouping similar individuals in the same group. Think of it as an algorithm that classifies a bunch of alphabets into vowels and consonants all starting from a can of alphabet noodle soup. You can start as randomly distributed as possible and the algorithm of K-means clustering will use some clever techniques to illustrate what the best number of groups are for your classification task. Namely, below are the two techniques I employed to find the most optimal number of groups in terms of health trajectory.</p>
+
+<h4 id="the-elbow-method">The Elbow Method</h4>
+<p><img src="/assets/img/elbow_method_research_essex.webp" alt="Elbow Method for K means clustering" /></p>
+
+<p>The elbow method plot shows the relationship between the number of clusters (k) and the inertia (within-cluster sum of squares). Here’s how to interpret it:</p>
+
+<ol>
+  <li>
+    <p>Look for an “elbow” point in the plot where the rate of decrease sharply changes.</p>
+  </li>
+  <li>
+    <p>This point represents a good balance between cluster coherence and number of clusters.</p>
+  </li>
+  <li>
+    <p>After this point, adding more clusters doesn’t significantly reduce inertia.</p>
+  </li>
+</ol>
+
+<p>We would pick somewhere between 3 and 5 in this case.</p>
+
+<h4 id="the-silhouette-method">The Silhouette Method</h4>
+<p><img src="/assets/img/silhouette_method_research_essex.webp" alt="Silouette method" /></p>
+
+<p>The silhouette method measures how similar an object is to its own cluster compared to other clusters. On the x-axis, the number of clusters is shown, while the y-axis shows that the silhouette score ranges from -1 to 1, where higher values indicate better-defined clusters.</p>
+
+<p>In the elbow method, there is a decent decrease in loss criterion from 2 to 3 clusters, with smaller decreases after 3 clusters. While the silhouette method shows a big decrease in loss criterion until k=5, so I opted for k=3 clusters as a midpoint.</p>
+
+<h2 id="the-three-types-of-health-trajectories">The Three Types of Health Trajectories</h2>
+<p><img src="/assets/img/k_means_health_trajectory.webp" alt="Health Trajectory" /></p>
+
+<p>The purpose of this paper is to illustrate that for the same group of people of similar initial health status, different groups will have different trajectories past a certain age and that age is 60 here. Based on this graph, we’ve achieved exactly that using the UKHLS 13-year panel survey data. We identified three types to be exact:</p>
+
+<ol>
+  <li>Type I: “Resilient Health Type”</li>
+</ol>
+
+<ul>
+  <li>Represents the majority (91.7%) of the sample</li>
+  <li>Starts with the lowest frailty at age 40</li>
+  <li>Shows a very gradual, steady increase in frailty over time</li>
+  <li>Maintains the lowest frailty index throughout the entire age range</li>
+</ul>
+
+<ol>
+  <li>Type II: “Early Onset Frailty Type”</li>
+</ol>
+
+<ul>
+  <li>Represents 3.9% of the sample</li>
+  <li>Begins with the highest initial frailty at age 40</li>
+  <li>Experiences a more pronounced increase in frailty, especially after age 60</li>
+</ul>
+
+<ol>
+  <li>Type III: “Accelerated Decline Type”</li>
+</ol>
+
+<ul>
+  <li>Represents 4.4% of the sample</li>
+  <li>Starts between Types I and II in terms of initial frailty</li>
+  <li>Rapidly increases in frailty, surpassing Type II around age 55</li>
+  <li>Shows some fluctuations but generally maintains higher frailty levels in later years</li>
+</ul>
+
+<h2 id="key-insights">Key Insights</h2>
+<p>I observed that the gap in frailty between the Resilient Health Type and the other two types widens significantly by age 60, suggesting that initial health trajectories can indeed influence long-term health outcomes.</p>
+
+<p><strong>Gender disparities</strong>: Types II and III exhibit a distinct female skew (63.7% and 62.9% female respectively), while Type I mirrors the UK population average more closely.</p>
+
+<p><img src="/assets/img/gender_distro_k_means_essex.webp" alt="Gender Distribution" /></p>
+
+<p><strong>Educational attainment</strong>: Type I has a significantly higher proportion of university degree holders (42.7%) compared to Type II (27.3%) and Type III (23.1%), suggesting a strong association between higher education and more favorable health trajectories.</p>
+
+<p><img src="/assets/img/education_attainment_essex.webp" alt="education attainment" /></p>
+
+<p><strong>Employment and earnings</strong>: Types II and III show lower employment rates both before and after the typical retirement age, and earn approximately 25% less than the sample average.</p>
+
+<p><img src="/assets/img/employment_by_health_type.webp" alt="Employment by health" /></p>
+
+<p>Furthermore, there is a 20% increase in adjusted r-squared after adding the health types as dummy variables in the regression model. A future blog post, I might discuss the model criteria used comparing classical labor market models vs. prediction models using ensemble methods.</p>
+
+<p><img src="/assets/img/r_squared_improved_k_means_essex.webp" alt="R squared and stats summary" /></p>
+
+<p>If you enjoy reading my blog posts or have any suggestions for content, please email me.</p>
+
+<h2 id="in-conclusion">In Conclusion</h2>
+<p>There is a ton of fascinating research happening in gerontology and genetics, many aided by advancements in deep learning and genetics mapping. If this topic interests you, consider subscribing and sharing this post with friends and family.</p>
+
+<blockquote>
+  <p>If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.</p>
+  <ul>
+    <li>John von Neumann</li>
+  </ul>
+</blockquote>]]></content><author><name></name></author><category term="school" /><category term="graduate-school" /><category term="economics" /><category term="data-science" /><summary type="html"><![CDATA[Using K-means clustering on UKHLS health data to identify three distinct health trajectory types and their impact on labor market outcomes, gender disparities, and educational attainment.]]></summary></entry><entry><title type="html">Why I Chose to Study in the UK</title><link href="http://localhost:4000/blog/2024/uk-year-in-review/" rel="alternate" type="text/html" title="Why I Chose to Study in the UK" /><published>2024-05-29T09:26:36-07:00</published><updated>2024-05-29T09:26:36-07:00</updated><id>http://localhost:4000/blog/2024/uk-year-in-review</id><content type="html" xml:base="http://localhost:4000/blog/2024/uk-year-in-review/"><![CDATA[<p>There already exist numerous articles and blog posts on graduate school advice such as the one from the superstar Economist <a href="https://gsb-faculty.stanford.edu/susan-athey/professional-advice/">Susan Athey’s Professional Advice for Students</a>, or this one by <a href="https://econphd.econwiki.com/guide.htm">EconPhD.net</a>. Therefore, I will limit the scope of this blog post in terms of my own anecdotal experience. For the unfamiliar, the field of economics is the study of human behavior from the individual level to the nation-level and beyond, the field today largely reflects a quantitative science that relies heavily on mathematical and computational modeling.</p>
+
+<h2 id="my-previous-life">My Previous Life</h2>
+<p>My experience might sound relatable to many young economics undergraduates, at least from my own observation - there’s never a short supply of eager economic students walking into intermediate microeconomic classes at my university. Unlike computer science or computer engineering students, who go on to become software engineers or researchers, how many economics students actually go on to become economists or work in an economic field? I would guess very little do, many of my economics friends went on and became accountants, business analysts and pivoted into technology (all are distinguished in their own ways). I am not arguing for or against the market signals of an economics undergraduate education, but simply to state my observations. Usually, undergraduate economics departments in the U.S. are fairly light on the rigorous math required for graduate school and field work in economics, I found this out in my sophomore year (2nd year). Generally, one should have good intuitions of calculus, linear algebra, differential equations, proofs and probability/statistics. Once I realized this, I took as many math classes as my schedule allowed, and it was interesting being the only economics major in those classes. In retrospect, I should’ve double majored or minored in Mathematics, but that doesn’t stop me from learning math on my own these days, especially with the amazing resource we have with <a href="https://github.com/ossu/math">ossu/math</a>.</p>
+
+<p>In 2020, a global pandemic uprooted my plans, all my classes that quarter were either cancelled 2/3 of the way or delayed until further notice. I still had plans for graduate school in Economics, but the fog of uncertainty associated with the pandemic casted doubts on my original plan of applying to PhD programs right away. I just started my 3rd year of college at the University of Washington, and it’s not off to a great start. Once the dust settled in my senior year, I decided to gain some work experience after I graduate where I ended up working in payroll accounting for a year at a Fortune 500 company.</p>
+
+<p>After a year of said accounting work, I decided that I ought to pursue what I felt was incomplete at the time, which is my economics journey. Due to the lack of math requirements, undergraduate economics departments in general have a huge discrepancy in terms of what can be taught and what should be taught in an economics education. I believe this is where the incompleteness lies in my own undergraduate education. Therefore, I started emailing professors and mentors, which was followed by a flurry of graduate school applications to master’s programs in economics.</p>
+
+<h2 id="europe-vs-the-us">Europe vs. the U.S.</h2>
+<p>In general, European master’s programs in Economics are more rigorous and higher value than the U.S. programs. I believe this is largely due to the structure of education systems, where the U.S. focuses on PhD programs and terminal masters are rare in this field. Many European undergrad are already done in 3 years, where you concentrate on your intended major only. Where in the US, there are certain general education requirements that allow students to explore their interests in the first year of university. Therefore, a terminal master’s may not sound as attractive given the differential in opportunity cost under the U.S. system. Also, graduate program usually takes 1 year in the UK and many EU countries, it’s essentially a PhD lite experience. “A Master’s is akin to running a 5k, PhD is a marathon.” This was perfect for me, because I wasn’t sure if my background was competitive enough for a PhD in the US right away or if I’m fully committed to spending the next 6 year to Economics research.</p>
+
+<p>Ultimately, after some careful deliberations, I chose University of Essex to pursue a MSc in Economics because of its research output rankings (and since Oxford/LSE didn’t accept me into their programs).</p>
+
+<h2 id="nine-months-later">Nine Months Later…</h2>
+<p>Lukily, I am happy with the intertemporal choice that I made 1 year prior, and I’ve made amazing connections with my classmates and professors. The intricacies of ARIMA time series models, the derivations of the dynamic equations that solve the capital level of the Ramsey (Neoclassical) Growth Model, and the relationship between unemployment and vacancy in the Diamond-Pissarides-Mortenson model all readied me to become a master of the (economics) universe someday.</p>
+
+<p>To my future employers reading this, here’s a list of the classes I did:</p>
+
+<ol>
+  <li><strong>Macroeconomics Analysis</strong>
+    <ul>
+      <li>Solow, OLG, Endogenous Growth, Ramsey, and Pissarides Model.</li>
+    </ul>
+  </li>
+  <li><strong>Microeconomics Analysis</strong>
+    <ul>
+      <li>Game Theory, Hicksian Demand, solving for general equilibrium</li>
+    </ul>
+  </li>
+  <li><strong>Mathematical Methods</strong>
+    <ul>
+      <li>Constrained and Unconstrained Optimization, Linear Programming, Dynamic Programming.</li>
+    </ul>
+  </li>
+  <li><strong>Econometrics Method (with matrices)</strong>
+    <ul>
+      <li>OLS, Gauss-Markov, AIC/BIC, Heteroskedasticity, FGLS, Maximum Likelihood, Autocorrelation, Instrumental Variables, Unit Root, Cointegration, and Panel Methods.</li>
+    </ul>
+  </li>
+  <li><strong>Data Science Economics</strong>
+    <ul>
+      <li>Lasso, Ridge, Trees, Support Vectors, Neural Nets, etc.</li>
+    </ul>
+  </li>
+  <li><strong>Causal Inference (Public Policy Analysis)</strong>
+    <ul>
+      <li>RCT, Diff-in-Diff, IV, Matching, Regression Discontinuity, Quantile Treatment.</li>
+    </ul>
+  </li>
+  <li><strong>Behavioral Economics on Markets</strong>
+    <ul>
+      <li>I will do a future blog on this since I think this is a fascinating field.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="the-good-the-bad-and-the-ugly">The Good, the Bad and the Ugly</h2>
+<p>Now, if you got this far reading my blog, it would be unfair of me if I do not give a thorough “review” of the UK and my experience with the program.</p>
+
+<p>The southern part of the UK actually surprised me with the days of sunshine every months, growing up in Seattle truly prepares you for the worst of Seasonal Depression. Aside from the weather, the people are quite friendly here, especially after a pint or two. One sad reality however, is the smell of sewage you’ll often be greeted with in London and most part of its waterways in the Southeast. Coinincidentally, the first causal experiment in history was done by an English  epidemiologist named <a href="https://en.wikipedia.org/wiki/John_Snow">John Snow</a> on the Thames River in 1855, he used statistical mapping methods to ultimately identify the cause of Cholera - you guessed it - it’s contaminated water. John Snow became known as the father of epidemiology because of his pioneering methods now known as difference-in-difference which is widely used in medicine and economics.</p>
+
+<p>Aside from the sewage smell and the lime-stone filled tap water in Southeastern UK, the country can be insanely beautiful, coupled with the Tudor town centers and Norman cathedrals that’re rare sights in America. It might not look like Hogwarts everywhere you go, but the spirit of a once globe-trotting empire emanates in the air nonetheless. I could write multiple blogs on my travels in the UK alone.</p>
+
+<p>It’s the people you meet along the way that matters - I’m very thankful for the patience of my dissertation advisor and the friends that suffered through finals week with me. Beside, now I have reasons to visit a few more places because of them, even opening up two more continents that I have yet to visit.</p>
+
+<h2 id="with-respect-to-time">With Respect to Time</h2>
+<p>All good things must come to an end, but that doesn’t mean the new beginning isn’t exciting. This summer, I’m moving back to the west coast of the U.S., but now I can finally say I lived in Europe (not the EU) for a year.</p>
+
+<p>I’d love to hear your feedbacks and other topics you’d like me to write about, my email can be found at <a href="https://gjqu.github.io./about/">my profile page</a>.</p>
+
+<h4 id="end-quote">End Quote:</h4>
+<blockquote>
+  <p>But I don’t want comfort. I want God, I want poetry, I want real danger, I want freedom, I want goodness, I want sin. - Aldous Huxley</p>
+</blockquote>]]></content><author><name></name></author><category term="school" /><category term="graduate-school" /><category term="economics" /><summary type="html"><![CDATA[A personal account of choosing to study economics at the University of Essex in the UK, comparing European and US graduate programs, and reflecting on a year abroad.]]></summary></entry><entry><title type="html">First Attempt at Economic Research</title><link href="http://localhost:4000/blog/2024/data-cleaning/" rel="alternate" type="text/html" title="First Attempt at Economic Research" /><published>2024-04-21T09:26:36-07:00</published><updated>2024-04-21T09:26:36-07:00</updated><id>http://localhost:4000/blog/2024/data-cleaning</id><content type="html" xml:base="http://localhost:4000/blog/2024/data-cleaning/"><![CDATA[<p>It was in the beginning of March when I had the idea of writing my dissertation on causal inference, for those in the industry - A/B testing. I was in the midst of my public policy evaluation class which is more or less based on <em>Mostly Harmless Econometrics</em> by Angrist &amp; Pischke and <em>Causal Inference: The Mixtape</em> by Scott Cunningham.</p>
+
+<h2 id="the-initial-idea">The Initial Idea</h2>
+<p>One morning I was talking to myself after I finished listening to the <em>Freakonomics</em> podcast. There was one topic that I remembered clearly, it was about the discrepancy of wealth building between married couples and co-inhabiting couples. My idea is to study the effect of marital status on one’s earning, influenced by the theory and building on many empirical assumptions that there’s a gender bias when it comes to earning, specifically for women. So the obvious question is why would women get married if they’re more likely to suffer from a loss in earning? Now, this is building on previous empirical research and many modeling assumptions. I wanted to conduct my own research on this topic, but using the <a href="https://www.understandingsociety.ac.uk/about/british-household-panel-survey/">UKHLS Understanding Society Dataset</a>.</p>
+
+<h2 id="about-the-dataset">About the Dataset</h2>
+<p>The UKHLS dataset is a panel dataset collected by the UK Data Archive that has over 500,000 individual observations across 13 waves with over 2000 features. As any data analytics workflow goes, it all begins with reading the documentation tediously before coming with basic descriptive statistics, so the following events and findings unfolded.</p>
+
+<h2 id="the-first-iteration---matching">The First Iteration - Matching</h2>
+<p>The first thesis I had in mind going into this was <em>Unveiling Income Dynamics: Machine Learning Insights from Marital Status-Based Matching Analysis</em>. The basic idea is to use a causal inference method called “Matching”, which would properly identify causal relationships in absence of a Randomized Control Trial (RCT). Whenever you attempt to establish casual relationship between <em>A</em> and <em>B</em>, it’s useful to explore the possible selection bias, because it’s always plausible that there’s a factor <em>C</em> which affects <em>A</em> and <em>B</em> simultaneously. This selection bias would void the underlying causal relationship between <em>A</em> and <em>B</em>.</p>
+
+<p><img src="/assets/img/matching.png" alt="Average Treatment Effect on the Treated" /></p>
+
+<p>To address the above problem, we try to “match” each treatment unit (T) with someone that has the opposite treatment status (C), such that (C) has all the same traits as (T). Essentially, we’re inferring a treatment group and a control group without actually having to design a RCT experiment. The next step is compute the difference between the treatment and control pair of individuals, therefore the treatment effect is the weighted average of these differences. Matching is often the second best study design in the social sciences as a result. It’s worth noting the fundamental assumption matching relies on, which is called the <strong>Conditional Independence Assumption (CIA)</strong>. Put simply, the CIA fully captures the observable characteristics of the selection bias, it allows us to say that the treatment is not correlated with the counterfactual absent the treatment.</p>
+
+<h4 id="enough-jargons">Enough Jargons…</h4>
+<p>To summarize everything I tried in my first jupyter notebook, I created a sub-dataset using the UKHLS panel with ~15 demographic variables such as labor status, gender, education, various health status and etc, that would serve as the observables to use in matching. Below are the steps that resulted in a derived variable called the <em>similarity score</em> (propensity score) to match individuals based on observable characteristics:</p>
+<ol>
+  <li>Regress the treatment dummy T—in this case it’ll be marital status—on the set of controls X (age, education, etc.)</li>
+  <li>Estimate the probability of being married (dependent) based on the covariates (independent) using a logit model perhaps.</li>
+  <li>Run the logistic regression model to compute the propensity score for each individual, which is the predicted probability of being married given their characteristics.</li>
+  <li>Assess overlap and common support, check the balance. 
+a.	overlap in the propensity scores between married and unmarried groups</li>
+  <li>Implement matching algorithm such as nearest neighbor to compare married and unmarried.</li>
+</ol>
+
+<p>However, the key question is yet to be answered: do married women earn less than unmarried woman? (The details of the various robustness checks are not in the scope of this blog post for now.)
+Here’s the distribution of income I was able to derive from the dataset: 
+<img src="/assets/img/earningoutput.png" alt="earning plot" /></p>
+
+<h2 id="the-second-iteration">The Second Iteration</h2>
+<p>After the first series of data cleaning, one-hot encoding and wrangling, I had a more realistic expectation of exploratory data analysis - it takes an enormous amount of focus and dedication wrangling and cleaning data. In the span of two weekends, I sometimes felt defeated to not be able to come up with anything useful that would illustrate my theoretical intuitions.</p>
+
+<p>This is when a stroke of luck brought me to the office of my Data Science Economics Instructor, we agreed to meet and discuss my approach. His specialty is labor economics and health economics using predictive modeling. After our meeting, an idea instantly formed in my mind, what if I can incorporate in some health data to find the underlying causal factors that affect labor market participants, which would eventually open up a broader set of event studies along with marriage and gender dynamics.</p>
+
+<p>There are many plausible questions, for example, how does health outcome affect people’s labor market decisions? Is there an underlying dynamic between heterogenous demographics in regard to health? These are simply spoilers for my next iteration, which I will talk about in my next blog post. Below are a few plots that illustrates distribution of health status change and labor status change, using the following encoding:</p>
+<ul>
+  <li>Employed (1): 296,237 instances.</li>
+  <li>Unemployed (2): 25,886 instances.</li>
+  <li>Inactive (3): 207,761 instances.</li>
+  <li>Not Available/Classified (NA): 3,592 instances.</li>
+</ul>
+
+<p><img src="/assets/img/health_lfstat.png" alt="health status and labor force participation" /></p>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ol>
+  <li>The initial approach will almost always end up in the wrong direction.</li>
+  <li>If I’m not iterating frequently, it implies that I’m not optimizing towards my overall objective. e.g. conduct causal analysis for key economic questions of interest</li>
+  <li>Don’t be afraid to seek others’ advice, as is everything else in life, there’s always someone I can learn from.</li>
+  <li>Don’t be afraid of pivots, adaptability is learned through failed experiments. Luckily in data science and economic research, the marginal cost of pivoting is fairly low at an early stage.</li>
+</ol>
+
+<h2 id="stay-tuned-for-the-next-blog-post">Stay Tuned for the Next Blog Post</h2>
+
+<blockquote>
+  <p>Success is the ability to move from failure to failure without losing enthusiasm for it.</p>
+  <ul>
+    <li>Winston Churchill</li>
+  </ul>
+</blockquote>]]></content><author><name></name></author><category term="labor-economics" /><category term="data-science" /><category term="economics" /><summary type="html"><![CDATA[A first attempt at economic research using propensity score matching to study the causal effect of marital status on earnings using the UKHLS dataset.]]></summary></entry><entry><title type="html">My First Blog Post</title><link href="http://localhost:4000/blog/2024/first-blog-post/" rel="alternate" type="text/html" title="My First Blog Post" /><published>2024-04-03T09:26:36-07:00</published><updated>2024-04-03T09:26:36-07:00</updated><id>http://localhost:4000/blog/2024/first-blog-post</id><content type="html" xml:base="http://localhost:4000/blog/2024/first-blog-post/"><![CDATA[<p>In the learning pyramid (also known as the cone of learning), the base of the pyramid is made up of “Practiced by Doing (75%)” and “Teaching Others (90%)”, the percentage represent the final retention of knowledge induced by the type of learning.</p>
 
 <p>Therefore, I will be updating my blog periodically to document my journey of learning Machine Learning (ML) from theory to application, and the mathematics behind it. My exposure to ML initially is through <a href="https://davidzentlermunro.github.io/">David Zentler-Munro’s</a> course “Data Science for Economics” at the University of Essex, where I am currently studying as a MS Economics student.</p>
 
@@ -38,6 +533,7 @@
 
 <h2 id="let-the-journey-begin">Let the Journey Begin!</h2>
 
-<p>“The mystery of human existence lies not in just staying alive, but in finding something to live for.”</p>
-
-<p>― Fyodor Dostoyevsky</p>]]></content><author><name>Gavin Qu</name></author><category term="Technology" /><category term="Books" /><category term="Machine Learning" /><category term="AI" /><summary type="html"><![CDATA[In the learning pyramid (also known as the cone of learning), the base of the pyramid is made up of “Practiced by Doing (75%)” and “Teaching Others (90%)”, the percentage represent the final retention of knowledge induced by the type of learning.]]></summary></entry><entry><title type="html">First Attempt at a Dissertation</title><link href="http://localhost:4000/jekyll/update/2024/04/03/data-cleaning.html" rel="alternate" type="text/html" title="First Attempt at a Dissertation" /><published>2024-04-03T17:26:36+01:00</published><updated>2024-04-03T17:26:36+01:00</updated><id>http://localhost:4000/jekyll/update/2024/04/03/data-cleaning</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/04/03/data-cleaning.html"><![CDATA[]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<blockquote>
+  <p>The mystery of human existence lies not in just staying alive, but in finding something to live for.
+  ― Fyodor Dostoyevsky</p>
+</blockquote>]]></content><author><name></name></author><category term="technology" /><category term="books" /><category term="machine-learning" /><category term="ai" /><summary type="html"><![CDATA[A first blog post about the learning pyramid and the journey of learning Machine Learning from theory to application, including recommended books and resources.]]></summary></entry></feed>

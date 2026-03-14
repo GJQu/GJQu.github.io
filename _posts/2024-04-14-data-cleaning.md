@@ -1,16 +1,13 @@
 ---
 layout: post
-title:  "First Attempt at Economic Research"
-date:   2024-04-21 17:26:36 +0100
-categories: [Labor Economics]
-tags: [Data Science, Economics]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/education_pay.png"  # Path to the header image
-  # caption: "Photo credit: [**Unsplash**](https://unsplash.com)"  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-published: true  # If false, the post won't be published but will be drafted
+title: "First Attempt at Economic Research"
+date: 2024-04-21 17:26:36 +0100
+categories: labor-economics
+tags: data-science economics
+thumbnail: assets/img/education_pay.png
+description: A first attempt at economic research using propensity score matching to study the causal effect of marital status on earnings using the UKHLS dataset.
+giscus_comments: false
+related_posts: true
 ---
 It was in the beginning of March when I had the idea of writing my dissertation on causal inference, for those in the industry - A/B testing. I was in the midst of my public policy evaluation class which is more or less based on *Mostly Harmless Econometrics* by Angrist & Pischke and *Causal Inference: The Mixtape* by Scott Cunningham. 
 
@@ -23,7 +20,7 @@ The UKHLS dataset is a panel dataset collected by the UK Data Archive that has o
 ## The First Iteration - Matching
 The first thesis I had in mind going into this was *Unveiling Income Dynamics: Machine Learning Insights from Marital Status-Based Matching Analysis*. The basic idea is to use a causal inference method called "Matching", which would properly identify causal relationships in absence of a Randomized Control Trial (RCT). Whenever you attempt to establish casual relationship between *A* and *B*, it's useful to explore the possible selection bias, because it's always plausible that there's a factor *C* which affects *A* and *B* simultaneously. This selection bias would void the underlying causal relationship between *A* and *B*. 
 
-![Average Treatment Effect on the Treated](/assets/images/matching.png)
+![Average Treatment Effect on the Treated](/assets/img/matching.png)
 
 To address the above problem, we try to "match" each treatment unit (T) with someone that has the opposite treatment status (C), such that (C) has all the same traits as (T). Essentially, we're inferring a treatment group and a control group without actually having to design a RCT experiment. The next step is compute the difference between the treatment and control pair of individuals, therefore the treatment effect is the weighted average of these differences. Matching is often the second best study design in the social sciences as a result. It's worth noting the fundamental assumption matching relies on, which is called the **Conditional Independence Assumption (CIA)**. Put simply, the CIA fully captures the observable characteristics of the selection bias, it allows us to say that the treatment is not correlated with the counterfactual absent the treatment. 
 
@@ -38,7 +35,7 @@ a.	overlap in the propensity scores between married and unmarried groups
 
 However, the key question is yet to be answered: do married women earn less than unmarried woman? (The details of the various robustness checks are not in the scope of this blog post for now.)
 Here's the distribution of income I was able to derive from the dataset: 
-![earning plot](/assets/images/earningoutput.png)
+![earning plot](/assets/img/earningoutput.png)
 
 ## The Second Iteration
 After the first series of data cleaning, one-hot encoding and wrangling, I had a more realistic expectation of exploratory data analysis - it takes an enormous amount of focus and dedication wrangling and cleaning data. In the span of two weekends, I sometimes felt defeated to not be able to come up with anything useful that would illustrate my theoretical intuitions. 
@@ -51,7 +48,7 @@ There are many plausible questions, for example, how does health outcome affect 
 - Inactive (3): 207,761 instances.
 - Not Available/Classified (NA): 3,592 instances.
 
-![health status and labor force participation](/assets/images/health_lfstat.png)
+![health status and labor force participation](/assets/img/health_lfstat.png)
 
 ## Lessons Learned 
 1. The initial approach will almost always end up in the wrong direction.

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      From Medical Charts to Economic Markets | Gavin Qu
+    
+  
+</title>
+<meta name="author" content="Gavin Qu">
+<meta name="description" content="Using K-means clustering on UKHLS health data to identify three distinct health trajectory types and their impact on labor market outcomes, gender disparities, and educational attainment.">
+
+  <meta name="keywords" content="economics, data-science, causal-inference, portfolio">
+
+
+
+
+
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="Gavin Qu">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gavin Qu | From Medical Charts to Economic Markets">
+  <meta property="og:url" content="http://localhost:4000/blog/2024/from-medical-charts/">
+  <meta property="og:description" content="Using K-means clustering on UKHLS health data to identify three distinct health trajectory types and their impact on labor market outcomes, gender disparities, and educational attainment.">
+  
+  <meta property="og:locale" content="en">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="From Medical Charts to Economic Markets">
+  <meta name="twitter:description" content="Using K-means clustering on UKHLS health data to identify three distinct health trajectory types and their impact on labor market outcomes, gender disparities, and educational attainment.">
+  
+  
+
+
+
+  <!-- Schema.org -->
+  
+  
+  
+
+  <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Gavin Qu"
+        },
+        "url": "http://localhost:4000/blog/2024/from-medical-charts/",
+        "@type": "BlogPosting",
+        "description": "Using K-means clustering on UKHLS health data to identify three distinct health trajectory types and their impact on labor market outcomes, gender disparities, and educational attainment.",
+        "headline": "From Medical Charts to Economic Markets",
+        
+        "sameAs": ["https://github.com/GJQu","https://www.linkedin.com/in/gavinqu","https://twitter.com/GavinJQu"],
+        
+        "name": "Gavin Qu",
+        "@context": "https://schema.org"
+    }
+  </script>
+
+
+
+<!-- Security: Content Security Policy -->
+<!-- Permissive CSP suitable for academic websites. Allows external images, videos, and common embed services. -->
+<!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?v=f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?v=62b2ac103a88034e6882a5be5f3e2772">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+<link rel="stylesheet" href="/assets/css/main.css?v=d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="http://localhost:4000/blog/2024/from-medical-charts/">
+
+
+  <!-- Dark Mode -->
+  <script src="/assets/js/theme.js?v=5fea5159b787642c1bbc1f334d60f883"></script>
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          
+            
+              <span class="font-weight-bold">Gavin</span>
+            
+            
+            Qu
+          
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">about
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/blog/">blog
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/projects/">projects
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV
+                    
+                  </a>
+                </li>
+              
+            
+          
+          
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span>
+              </button>
+            </li>
+          
+          
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+
+
+
+
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">From Medical Charts to Economic Markets</h1>
+    <p class="post-meta">
+      Created on October 01, 2024
+      
+      
+      
+      
+    </p>
+    <p class="post-tags">
+      
+        <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>
+      
+      
+          ·  
+        
+          
+            <a href="/blog/tag/graduate-school"> <i class="fa-solid fa-hashtag fa-sm"></i> graduate-school</a>
+          
+          
+             
+          
+        
+          
+            <a href="/blog/tag/economics"> <i class="fa-solid fa-hashtag fa-sm"></i> economics</a>
+          
+          
+             
+          
+        
+          
+            <a href="/blog/tag/data-science"> <i class="fa-solid fa-hashtag fa-sm"></i> data-science</a>
+          
+          
+        
+      
+
+      
+          ·  
+        
+          
+            <a href="/blog/category/school"> <i class="fa-solid fa-tag fa-sm"></i> school</a>
+          
+          
+        
+      
+    </p>
+  </header>
+
+  <article class="post-content">
+    
+    <div id="markdown-content">
+      <p>I want to start this post by thanking those who supported me and kept me sane throughout this journey of economic research and data science, especially my advisor, Dr. David Zentler-Munro, at the University of Essex.</p>
+
+<h2 id="a-little-background">A Little Background</h2>
+<p>As with all “great” data science projects, you first develop all the research questions and then train the model based on your given data. Right?</p>
+
+<p>Of course, assuming you want to discover halfway through that you don’t have the data in the right format and the missing values are imputed incorrectly based on your proxy variables.</p>
+
+<p>To say the amount of data-cleaning and data-wrangling are the bulk of the research would be an understatement. By definition, data cleaning is the process of identifying and correcting errors, spotting missing values, and removing duplicates to impute a dataset that accurately represents the real world it’s supposed to model, or at the very least allows the computer to process it. On the other hand, data wrangling is about transforming the data from the raw form into a more usable format, whether creating proxy variables or simply merging multiple datasets. More on data wrangling later, for now, think of data cleaning as the mortar and data wrangling as the pestle—one provides the foundation by holding everything together, while the other grinds and reshapes the raw ingredients into something useful.</p>
+
+<h2 id="data-cleaning">Data Cleaning</h2>
+<p>First, I extracted health-related data from the UKHLS dataset.</p>
+
+<p>Focusing on 27 health variables, along with individual IDs, age, and wave identifiers I created. The health data came in three types, which added some complexity, but I learned to manage the inconsistencies in the dataset. The two key variables I used were ‘disdif’ and ‘hcond.’ ‘Disdif’ tracks difficulties with daily activities like walking, and ‘hcond’ helped me create a new chronic health variable called ‘healthcond.’ This variable captures long-term health conditions, such as cardiovascular diseases, cancer, chronic respiratory diseases, and diabetes, which are classified as chronic by the World Health Organization.</p>
+
+<p>To deal with missing data (marked with -9), I converted them to ‘NaN’ (Not a Number) in Python. I then filled in missing health condition data by carrying forward a diagnosis from earlier waves, unless all previous waves had missing data, in which case I left it as NaN.</p>
+
+<p>We’ll come back to data cleaning and data wrangling in more detail in a later blog post.</p>
+
+<h2 id="visualization-of-frailty-and-mortality">Visualization of Frailty and Mortality</h2>
+<p>Frailty is used as a measurement of ratio of numbers of health conditions an individual have divided by the total number (27) of possible health conditions used in the survey.</p>
+
+<p>The plot below  illustrates the fraction of individuals who have passed away by a given age, with a vertical dashed line marking age 60, a notable transition point in both health and economic life stages. As expected, the mortality fraction remains relatively low throughout early and middle adulthood but increases sharply after age 60. The mortality rate rises exponentially, reflecting known patterns of age-related health decline. This steep increase in mortality is consistent with findings in gerontology and reflects changes in immune system function, vulnerability to chronic diseases, and overall frailty.</p>
+
+<p>The data also shows an accelerated increase in mortality after age 90, with death becoming almost universal for individuals aged 105 and older. This graph is crucial as it sets the stage for understanding how frailty develops over time, reinforcing the need to distinguish between different health types when analyzing labor market outcomes.</p>
+
+<p>The next plot shows the average frailty index binned by age. Here, frailty is measured as a ratio of health deficits over possible health deficits, with frailty increasing as health deteriorates. The vertical dashed line again marks age 60, where the uptick in frailty becomes most pronounced.</p>
+
+<p><img src="/assets/img/frailty_medical_chart_binned.webp" alt="Frailty Chart"></p>
+
+<p>The scatterplot reveals an interesting pattern: while frailty remains relatively stable before age 60, a sharp upward trajectory emerges thereafter. This is particularly important because it highlights the heterogeneity in health outcomes among older adults. The increasing error bars in the later years suggest that there is greater variation in health among the elderly, supporting the notion that distinct health types might be influencing these differences. Those are all consistent with gerontology literature regarding the change in human immunological systems after age 60.</p>
+
+<p>This divergence becomes the foundation for my subsequent k-means clustering analysis, which seeks to group individuals into health types based on their frailty progression. The variation in frailty also offers insight into employment dynamics post-retirement age, as individuals with higher frailty are likely to face more significant barriers to continued labor market participation.</p>
+
+<h2 id="machine-learning-and-statistical-modeling">Machine Learning and Statistical Modeling</h2>
+<p>For those that are already familiar with unsupervised machine learning methods, feel free to skip to the next section. I used K-means clustering which is basically a statistical method to group similar samples together based on some variables. In addition, it will also aim to make the different groups as different as possible while grouping similar individuals in the same group. Think of it as an algorithm that classifies a bunch of alphabets into vowels and consonants all starting from a can of alphabet noodle soup. You can start as randomly distributed as possible and the algorithm of K-means clustering will use some clever techniques to illustrate what the best number of groups are for your classification task. Namely, below are the two techniques I employed to find the most optimal number of groups in terms of health trajectory.</p>
+
+<h4 id="the-elbow-method">The Elbow Method</h4>
+<p><img src="/assets/img/elbow_method_research_essex.webp" alt="Elbow Method for K means clustering"></p>
+
+<p>The elbow method plot shows the relationship between the number of clusters (k) and the inertia (within-cluster sum of squares). Here’s how to interpret it:</p>
+
+<ol>
+  <li>
+    <p>Look for an “elbow” point in the plot where the rate of decrease sharply changes.</p>
+  </li>
+  <li>
+    <p>This point represents a good balance between cluster coherence and number of clusters.</p>
+  </li>
+  <li>
+    <p>After this point, adding more clusters doesn’t significantly reduce inertia.</p>
+  </li>
+</ol>
+
+<p>We would pick somewhere between 3 and 5 in this case.</p>
+
+<h4 id="the-silhouette-method">The Silhouette Method</h4>
+<p><img src="/assets/img/silhouette_method_research_essex.webp" alt="Silouette method"></p>
+
+<p>The silhouette method measures how similar an object is to its own cluster compared to other clusters. On the x-axis, the number of clusters is shown, while the y-axis shows that the silhouette score ranges from -1 to 1, where higher values indicate better-defined clusters.</p>
+
+<p>In the elbow method, there is a decent decrease in loss criterion from 2 to 3 clusters, with smaller decreases after 3 clusters. While the silhouette method shows a big decrease in loss criterion until k=5, so I opted for k=3 clusters as a midpoint.</p>
+
+<h2 id="the-three-types-of-health-trajectories">The Three Types of Health Trajectories</h2>
+<p><img src="/assets/img/k_means_health_trajectory.webp" alt="Health Trajectory"></p>
+
+<p>The purpose of this paper is to illustrate that for the same group of people of similar initial health status, different groups will have different trajectories past a certain age and that age is 60 here. Based on this graph, we’ve achieved exactly that using the UKHLS 13-year panel survey data. We identified three types to be exact:</p>
+
+<ol>
+  <li>Type I: “Resilient Health Type”</li>
+</ol>
+
+<ul>
+  <li>Represents the majority (91.7%) of the sample</li>
+  <li>Starts with the lowest frailty at age 40</li>
+  <li>Shows a very gradual, steady increase in frailty over time</li>
+  <li>Maintains the lowest frailty index throughout the entire age range</li>
+</ul>
+
+<ol>
+  <li>Type II: “Early Onset Frailty Type”</li>
+</ol>
+
+<ul>
+  <li>Represents 3.9% of the sample</li>
+  <li>Begins with the highest initial frailty at age 40</li>
+  <li>Experiences a more pronounced increase in frailty, especially after age 60</li>
+</ul>
+
+<ol>
+  <li>Type III: “Accelerated Decline Type”</li>
+</ol>
+
+<ul>
+  <li>Represents 4.4% of the sample</li>
+  <li>Starts between Types I and II in terms of initial frailty</li>
+  <li>Rapidly increases in frailty, surpassing Type II around age 55</li>
+  <li>Shows some fluctuations but generally maintains higher frailty levels in later years</li>
+</ul>
+
+<h2 id="key-insights">Key Insights</h2>
+<p>I observed that the gap in frailty between the Resilient Health Type and the other two types widens significantly by age 60, suggesting that initial health trajectories can indeed influence long-term health outcomes.</p>
+
+<p><strong>Gender disparities</strong>: Types II and III exhibit a distinct female skew (63.7% and 62.9% female respectively), while Type I mirrors the UK population average more closely.</p>
+
+<p><img src="/assets/img/gender_distro_k_means_essex.webp" alt="Gender Distribution"></p>
+
+<p><strong>Educational attainment</strong>: Type I has a significantly higher proportion of university degree holders (42.7%) compared to Type II (27.3%) and Type III (23.1%), suggesting a strong association between higher education and more favorable health trajectories.</p>
+
+<p><img src="/assets/img/education_attainment_essex.webp" alt="education attainment"></p>
+
+<p><strong>Employment and earnings</strong>: Types II and III show lower employment rates both before and after the typical retirement age, and earn approximately 25% less than the sample average.</p>
+
+<p><img src="/assets/img/employment_by_health_type.webp" alt="Employment by health"></p>
+
+<p>Furthermore, there is a 20% increase in adjusted r-squared after adding the health types as dummy variables in the regression model. A future blog post, I might discuss the model criteria used comparing classical labor market models vs. prediction models using ensemble methods.</p>
+
+<p><img src="/assets/img/r_squared_improved_k_means_essex.webp" alt="R squared and stats summary"></p>
+
+<p>If you enjoy reading my blog posts or have any suggestions for content, please email me.</p>
+
+<h2 id="in-conclusion">In Conclusion</h2>
+<p>There is a ton of fascinating research happening in gerontology and genetics, many aided by advancements in deep learning and genetics mapping. If this topic interests you, consider subscribing and sharing this post with friends and family.</p>
+
+<blockquote>
+  <p>If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.</p>
+  <ul>
+    <li>John von Neumann</li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+
+  
+
+  
+
+  
+    
+      
+
+  
+    
+    
+      <br>
+      <hr>
+      <br>
+      <ul class="list-disc pl-8"></ul>
+
+      <!-- Adds related posts to the end of an article -->
+      <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+    
+
+    <p class="mb-2">Here are some more articles you might like to read next:</p>
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/pca-miniblog/">PCA - Like a Croissant that Flattens Over Time</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/hyperspecialization/">Specialists vs. Generalists in the Age of Hyperspecialization</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/economics-online-dating/">The Economics and Data Science of Online Dating</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/uk-year-in-review/">Why I Chose to Study in the UK</a>
+    
+  </li>
+
+  
+
+  <li class="my-2">
+    
+      <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/data-cleaning/">First Attempt at Economic Research</a>
+    
+  </li>
+
+
+
+    
+  
+
+  
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2026
+  Gavin
+  
+  Qu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js?v=a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?v=85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?v=2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?v=c15de51d4bb57887caa2c21988d97279"></script>
+<script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?v=d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+<!-- Badges -->
+
+
+
+
+  <!-- MathJax -->
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+  
+    <script src="/assets/js/mathjax-setup.js?v=a5bb4e6a542c546dd929b24b8b236dfd"></script>
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js?v=2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js?v=f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+  <!-- Search -->
+  <script type="module" src="/assets/js/search/ninja-keys.min.js?v=a3446f084dcaecc5f75aa1757d087dcf"></script>
+  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
+  <script src="/assets/js/search-setup.js?v=6c304f7b1992d4b60f7a07956e52f04a"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/shortcut-key.js?v=ccc841c459bfc0e64c1c2b5acd10df02"></script>
+
+
+
+
+  </body>
+</html>

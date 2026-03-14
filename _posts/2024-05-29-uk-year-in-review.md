@@ -1,17 +1,13 @@
 ---
 layout: post
-title:  "Why I Chose to Study in the UK"
-date:   2024-05-29 17:26:36 +0100
-categories: [School]
-tags: [Graduate School, Economics]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/norwich.png"  # Path to the header image
-  image_description: "Picture of the Norwich Cathedral at Sunset" # custom alt tag for screen readers
-  caption: "The Norwich Cathedral"  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-published: true  # If false, the post won't be published but will be drafted
+title: "Why I Chose to Study in the UK"
+date: 2024-05-29 17:26:36 +0100
+categories: school
+tags: graduate-school economics
+thumbnail: assets/img/norwich.png
+description: A personal account of choosing to study economics at the University of Essex in the UK, comparing European and US graduate programs, and reflecting on a year abroad.
+giscus_comments: false
+related_posts: true
 ---
 There already exist numerous articles and blog posts on graduate school advice such as the one from the superstar Economist [Susan Athey's Professional Advice for Students](https://gsb-faculty.stanford.edu/susan-athey/professional-advice/), or this one by [EconPhD.net](https://econphd.econwiki.com/guide.htm). Therefore, I will limit the scope of this blog post in terms of my own anecdotal experience. For the unfamiliar, the field of economics is the study of human behavior from the individual level to the nation-level and beyond, the field today largely reflects a quantitative science that relies heavily on mathematical and computational modeling. 
 
@@ -23,9 +19,7 @@ In 2020, a global pandemic uprooted my plans, all my classes that quarter were e
 After a year of said accounting work, I decided that I ought to pursue what I felt was incomplete at the time, which is my economics journey. Due to the lack of math requirements, undergraduate economics departments in general have a huge discrepancy in terms of what can be taught and what should be taught in an economics education. I believe this is where the incompleteness lies in my own undergraduate education. Therefore, I started emailing professors and mentors, which was followed by a flurry of graduate school applications to master's programs in economics. 
 
 ## Europe vs. the U.S. 
-In general, European master's programs in Economics are more rigorous and higher value than the U.S. programs. I believe this is largely due to the structure of education systems, where the U.S. focuses on PhD programs and terminal masters are rare in this field. Many European undergrad are already done in 3 years, where you concentrate on your intended major only. Where in the US, there are certain general education requirements that allow students to explore their interests in the first year of university. Therefore, a terminal master's may not sound as attractive given the differential in opportunity cost under the U.S. system. Also, graduate program usually takes 1 year in the UK and many EU countries, it's essentially a PhD lite experience. "A Master's is akin to running a 5k, PhD is a marathon." This was perfect for me, because I wasn't sure if my background was competitive enough for a PhD in the US right away or if I'm fully committed to spending the next 6 year to Economics research. Below is the spreadsheet I used to track my applications for this process. 
-
-![My Application Spreadsheet](/assets/images/schooltracking.png)
+In general, European master's programs in Economics are more rigorous and higher value than the U.S. programs. I believe this is largely due to the structure of education systems, where the U.S. focuses on PhD programs and terminal masters are rare in this field. Many European undergrad are already done in 3 years, where you concentrate on your intended major only. Where in the US, there are certain general education requirements that allow students to explore their interests in the first year of university. Therefore, a terminal master's may not sound as attractive given the differential in opportunity cost under the U.S. system. Also, graduate program usually takes 1 year in the UK and many EU countries, it's essentially a PhD lite experience. "A Master's is akin to running a 5k, PhD is a marathon." This was perfect for me, because I wasn't sure if my background was competitive enough for a PhD in the US right away or if I'm fully committed to spending the next 6 year to Economics research. 
 
 Ultimately, after some careful deliberations, I chose University of Essex to pursue a MSc in Economics because of its research output rankings (and since Oxford/LSE didn't accept me into their programs). 
 

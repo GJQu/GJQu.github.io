@@ -1,17 +1,13 @@
 ---
 layout: post
-title:  "From Medical Charts to Economic Markets"
-date:   2024-10-01 09:00:36 +0100
-categories: [School]
-tags: [Graduate School, Economics, Data Science]  # Tags for spec
-author: Gavin Qu  # Name of the author
-layout: single  # Layout option, "single" is commonly used for posts
-header:
-  image: "/assets/images/medical-chart-header.webp"  # Path to the header image
-  image_description: "" # custom alt tag for screen readers
-  caption: ""  # Optional caption for the header image
-toc: false  # Enable a table of contents on the page
-published: true  # If false, the post won't be published but will be drafted
+title: "From Medical Charts to Economic Markets"
+date: 2024-10-01 09:00:36 +0100
+categories: school
+tags: graduate-school economics data-science
+thumbnail: assets/img/medical-chart-header.webp
+description: Using K-means clustering on UKHLS health data to identify three distinct health trajectory types and their impact on labor market outcomes, gender disparities, and educational attainment.
+giscus_comments: false
+related_posts: true
 ---
 I want to start this post by thanking those who supported me and kept me sane throughout this journey of economic research and data science, especially my advisor, Dr. David Zentler-Munro, at the University of Essex.
 
@@ -40,7 +36,7 @@ The data also shows an accelerated increase in mortality after age 90, with deat
 
 The next plot shows the average frailty index binned by age. Here, frailty is measured as a ratio of health deficits over possible health deficits, with frailty increasing as health deteriorates. The vertical dashed line again marks age 60, where the uptick in frailty becomes most pronounced.
 
-![Frailty Chart](/assets/images/frailty_medical_chart_binned.webp)
+![Frailty Chart](/assets/img/frailty_medical_chart_binned.webp)
 
 The scatterplot reveals an interesting pattern: while frailty remains relatively stable before age 60, a sharp upward trajectory emerges thereafter. This is particularly important because it highlights the heterogeneity in health outcomes among older adults. The increasing error bars in the later years suggest that there is greater variation in health among the elderly, supporting the notion that distinct health types might be influencing these differences. Those are all consistent with gerontology literature regarding the change in human immunological systems after age 60. 
 
@@ -50,7 +46,7 @@ This divergence becomes the foundation for my subsequent k-means clustering anal
 For those that are already familiar with unsupervised machine learning methods, feel free to skip to the next section. I used K-means clustering which is basically a statistical method to group similar samples together based on some variables. In addition, it will also aim to make the different groups as different as possible while grouping similar individuals in the same group. Think of it as an algorithm that classifies a bunch of alphabets into vowels and consonants all starting from a can of alphabet noodle soup. You can start as randomly distributed as possible and the algorithm of K-means clustering will use some clever techniques to illustrate what the best number of groups are for your classification task. Namely, below are the two techniques I employed to find the most optimal number of groups in terms of health trajectory.  
 
 #### The Elbow Method
-![Elbow Method for K means clustering](/assets/images/elbow_method_research_essex.webp)
+![Elbow Method for K means clustering](/assets/img/elbow_method_research_essex.webp)
 
 The elbow method plot shows the relationship between the number of clusters (k) and the inertia (within-cluster sum of squares). Here's how to interpret it:
 
@@ -63,14 +59,14 @@ The elbow method plot shows the relationship between the number of clusters (k) 
 We would pick somewhere between 3 and 5 in this case. 
 
 #### The Silhouette Method
-![Silouette method](/assets/images/silhouette_method_research_essex.webp)
+![Silouette method](/assets/img/silhouette_method_research_essex.webp)
 
 The silhouette method measures how similar an object is to its own cluster compared to other clusters. On the x-axis, the number of clusters is shown, while the y-axis shows that the silhouette score ranges from -1 to 1, where higher values indicate better-defined clusters.
 
 In the elbow method, there is a decent decrease in loss criterion from 2 to 3 clusters, with smaller decreases after 3 clusters. While the silhouette method shows a big decrease in loss criterion until k=5, so I opted for k=3 clusters as a midpoint.
 
 ## The Three Types of Health Trajectories
-![Health Trajectory](/assets/images/k_means_health_trajectory.webp)
+![Health Trajectory](/assets/img/k_means_health_trajectory.webp)
 
 The purpose of this paper is to illustrate that for the same group of people of similar initial health status, different groups will have different trajectories past a certain age and that age is 60 here. Based on this graph, we’ve achieved exactly that using the UKHLS 13-year panel survey data. We identified three types to be exact: 
 
@@ -99,19 +95,19 @@ I observed that the gap in frailty between the Resilient Health Type and the oth
 
 **Gender disparities**: Types II and III exhibit a distinct female skew (63.7% and 62.9% female respectively), while Type I mirrors the UK population average more closely. 
 
-![Gender Distribution](/assets/images/gender_distro_k_means_essex.webp)
+![Gender Distribution](/assets/img/gender_distro_k_means_essex.webp)
 
 **Educational attainment**: Type I has a significantly higher proportion of university degree holders (42.7%) compared to Type II (27.3%) and Type III (23.1%), suggesting a strong association between higher education and more favorable health trajectories.
 
-![education attainment](/assets/images/education_attainment_essex.webp)
+![education attainment](/assets/img/education_attainment_essex.webp)
 
 **Employment and earnings**: Types II and III show lower employment rates both before and after the typical retirement age, and earn approximately 25% less than the sample average.
 
-![Employment by health](/assets/images/employment_by_health_type.webp)
+![Employment by health](/assets/img/employment_by_health_type.webp)
 
 Furthermore, there is a 20% increase in adjusted r-squared after adding the health types as dummy variables in the regression model. A future blog post, I might discuss the model criteria used comparing classical labor market models vs. prediction models using ensemble methods. 
 
-![R squared and stats summary](/assets/images/r_squared_improved_k_means_essex.webp)
+![R squared and stats summary](/assets/img/r_squared_improved_k_means_essex.webp)
 
 If you enjoy reading my blog posts or have any suggestions for content, please email me. 
 
