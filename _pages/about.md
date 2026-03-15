@@ -26,10 +26,11 @@ I am Gavin Qu, and I like to write about the Economics and Statistics of everyda
 ### What I Do
 
 My interests are broad and include:
-- Labor Economics
+- Labor and Health Economics
 - Causal Inference
+- Experimental Methods
+- Market Design and Game Theory
 - Machine Learning
-- Web Development
 - Open Source
 
 ### More About Me
