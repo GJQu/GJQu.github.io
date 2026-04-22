@@ -6,7 +6,7 @@ subtitle: MSc Economics | Aspiring PhD Researcher
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_pic.jpeg
   image_circular: false
 
 selected_papers: false
