@@ -21,7 +21,9 @@ latest_posts:
   limit: 5
 ---
 
-I am Gavin Qu, and I like to write about the Economics and Statistics of everyday life!
+I am **Gavin Qu**, and I write about the **Economics and Statistics** of everyday life!
+
+---
 
 ### What I Do
 
@@ -33,8 +35,11 @@ My interests are broad and include:
 - Machine Learning
 - Open Source
 
+### Research Approach
+
+I apply the scientific method to study human behavior through the abstractions of markets, firms, and economies. My work in labor economics sits at the intersection of education, health, and family formation. 
+I am driven by the 'why' behind social outcomes, using causal inference and policy evaluation to develop equitable solutions and enrich our understanding of humanity. 
+
 ### More About Me
 
-I'm passionate about the intersection of technology and social sciences, using data-driven approaches to explore and ask witty questions about the mundane and the oddity of life.
-
-When I'm not busy with the above, you can often find me reading or hiking in the PNW.
+I'm passionate about the intersection of technology and social sciences, using data to ask sharp questions about the mundane and the anomalous. When I'm not in the terminal, you can find me reading or hiking through the Pacific Northwest. 
